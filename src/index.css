@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import "tailwindcss";
+
+/* ------------------ GLOBAL ------------------ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* ------------------ THEME ------------------ */
+
+@theme {
+  /* Lilás vívido - #9F4CF4 */
+  --color-primary: 159 76 244;
+
+  /* Rosa Neon Escuro (usando a mesma cor do primary) */
+  --color-primary-dark: 84 8 107;
+
+  /* Turquesa 200 - #44D8C3 */
+  --color-secondary: 68 216 195;
+
+  /* Turquesa 100 - #52F0DA */
+  --color-secondary-light: 82 240 218;
+
+  /* Turquesa 300 - #27BFAA */
+  --color-secondary-dark: 39 191 170;
+
+  /* Preto - #030A18 */
+  --color-black: 3 10 24;
+
+  /* Cinza - #222222 */
+  --color-gray: 34 34 34;
+
+  /* Branco - #FFFFFF */
+  --color-white: 255 255 255;
+
+  /* Papel - #121212 */
+  --color-paper: 18 18 18;
+
+  /* Assets */
+  --switch-bg-url: url(./assets/sun.svg);
+  --icon-linkedin: url(./assets/logo-linkedin.svg);
+  --icon-linkedin-outline: url(./assets/logo-linkedin-outline.svg);
+  --icon-insta: url(./assets/logo-insta.svg);
+  --icon-insta-outline: url(./assets/logo-insta-outline.svg);
+}
+
+/* ------------------ ANIMAÇÕES ------------------ */
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(159, 76, 244, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 15px rgba(159, 76, 244, 0);
+  }
+}
+
+/* ------------------ UTILITIES ------------------ */
+
+@layer utilities {
+  /* ---------- BACKGROUNDS ---------- */
+  .bg-primary {
+    background-color: rgb(var(--color-primary));
+  }
+  .bg-primary-dark {
+    background-color: rgb(var(--color-primary-dark));
+  }
+  .bg-secondary {
+    background-color: rgb(var(--color-secondary));
+  }
+  .bg-secondary-light {
+    background-color: rgb(var(--color-secondary-light));
+  }
+  .bg-secondary-dark {
+    background-color: rgb(var(--color-secondary-dark));
+  }
+  .bg-paper {
+    background-color: rgb(var(--color-paper));
+  }
+  .bg-gray {
+    background-color: rgb(var(--color-gray));
+  }
+  .bg-black {
+    background-color: rgb(var(--color-black));
+  }
+  .bg-white {
+    background-color: rgb(var(--color-white));
+  }
+
+  /* Switch Icon */
+  .bg-switch {
+    background-image: var(--switch-bg-url);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  /* ---------- COLORS ---------- */
+  .color-primary {
+    color: rgb(var(--color-primary));
+  }
+  .color-primary-dark {
+    color: rgb(var(--color-primary-dark));
+  }
+  .color-secondary {
+    color: rgb(var(--color-secondary));
+  }
+  .color-secondary-light {
+    color: rgb(var(--color-secondary-light));
+  }
+  .color-secondary-dark {
+    color: rgb(var(--color-secondary-dark));
+  }
+  .color-white {
+    color: rgb(var(--color-white));
+  }
+  .color-black {
+    color: rgb(var(--color-black));
+  }
+
+  .border-primary {
+    border-color: rgb(var(--color-primary));
+  }
+  .border-white {
+    border-color: rgb(var(--color-white));
+  }
+  /* ---------- ICONS ---------- */
+  .icon-linkedin {
+    background-image: var(--icon-linkedin);
+  }
+  .icon-linkedin-outline {
+    background-image: var(--icon-linkedin-outline);
+  }
+  .icon-insta {
+    background-image: var(--icon-insta);
+  }
+  .icon-insta-outline {
+    background-image: var(--icon-insta-outline);
+  }
+
+  /* ---------- HEADINGS ---------- */
+  .text-h-1 {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl;
+  }
+  .text-h-2 {
+    @apply text-3xl md:text-5xl lg:text-6xl;
+  }
+  .text-h-3 {
+    @apply text-2xl md:text-4xl lg:text-5xl;
+  }
+  .text-h-4 {
+    @apply text-lg md:text-2xl lg:text-3xl;
+  }
+  .text-h-5 {
+    @apply text-base md:text-xl;
+  }
+  .text-h-6 {
+    @apply text-sm md:text-lg;
+  }
+
+  .text-body {
+    @apply text-base;
+  }
+  .text-body2 {
+    @apply text-sm;
+  }
+  .text-body3 {
+    @apply text-xs;
+  }
+
+  .shadow-custom {
+    box-shadow: 16px 16px 32px 0 rgba(30, 30, 30, 0.2);
+  }
+
+  /* ---------- LINKS E HOVERS ---------- */
+  .hover-color-primary:hover {
+    color: rgb(var(--color-primary));
+    @apply transition-colors duration-300;
+  }
+
+  /* ---------- MISC ---------- */
+  .rounded-50 {
+    border-radius: 3.125rem;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Pulse button / Floating Button similar */
+  .floatButton {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    cursor: pointer;
+    background-color: rgb(var(--color-primary));
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0 0 0 / 15%);
+    z-index: 999;
+  }
+
+  .floatButton::after {
+    content: "";
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: absolute;
+    animation: pulse-ring 1.4s infinite;
+  }
+}
