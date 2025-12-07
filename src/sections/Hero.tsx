@@ -45,14 +45,16 @@ export const Hero = ({ id }: HeroProps) => {
               dataAosDuration="800"
             />
             <BtnLink
-                text="Baixar CV"
-                textClassName="text-body"
-                href="#contato"
-                className="w-auto text-center font-medium color-primary border px-10 py-4"
-                dataAos="fade-up"
-                dataAosDelay="200"
-                dataAosDuration="800"
-              />
+              text="Baixar currículo"
+              href={"/portfolio-regiana-cruz/Currículo_RegianaCruz.pdf"}
+              target={"_blank"}
+              rel={"noopener noreferrer"}
+              textClassName="text-body"
+              className="w-auto text-center font-medium color-primary border px-10 py-4"
+              dataAos="fade-up"
+              dataAosDelay="200"
+              dataAosDuration="800"
+            />
           </div>
         </div>
         <div className="flex w-1/2 justify-center items-center">
