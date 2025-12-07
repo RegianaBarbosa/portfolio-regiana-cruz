@@ -18,8 +18,6 @@ export const Sidebar = ({
   isOpen,
   onClose,
   navItems,
-  instagramIconSrc,
-  whatsappIconSrc,
   onNavigate,
 }: SidebarProps) => {
   return (
