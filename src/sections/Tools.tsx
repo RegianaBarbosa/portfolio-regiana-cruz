@@ -13,24 +13,52 @@ interface ToolsProps {
 export const Tools = ({ id }: ToolsProps) => {
   const tools = [
     { src: tool1, alt: "Figma logo" },
-    { src: tool2, alt: "React logo" },
-    { src: tool3, alt: "Tailwind logo" },
-    { src: tool4, alt: "Next.js logo" },
-    { src: tool5, alt: "HTML logo" },
-    { src: tool6, alt: "CSS logo" },
-    { src: tool7, alt: "Canva logo" },
+    { src: tool2, alt: "Canva logo" },
+    { src: tool3, alt: "React logo" },
+    { src: tool4, alt: "Tailwind logo" },
+    { src: tool5, alt: "Next.js logo" },
+    { src: tool6, alt: "HTML logo" },
+    { src: tool7, alt: "CSS logo" },
   ];
 
   return (
-    <section id={id} className="w-full flex justify-center items-center min-h-60">
-      <div className="grid grid-cols-7 gap-16">
+    <section
+      id={id}
+      className="w-full flex justify-center items-center py-16 md:py-0 px-6"
+    >
+      <div
+        className="
+          grid
+          grid-cols-2
+          sm:grid-cols-3
+          md:grid-cols-4
+          lg:grid-cols-7
+          gap-10
+          sm:gap-12
+          lg:gap-16
+          justify-items-center
+          items-center
+    
+        "
+      >
         {tools.map((tool) => (
           <div
             key={tool.alt}
-            className="w-25 h-25 flex items-center justify-center 
-                       hover:scale-110 transition-transform duration-300 cursor-pointer"
+            className="
+              w-20 h-20
+              sm:w-24 sm:h-24
+              md:w-26 md:h-26
+              flex items-center justify-center
+              hover:scale-110 transition-transform duration-300 cursor-pointer
+              last:col-span-2 last:justify-self-center
+              lg:last:col-span-1 lg:last:justify-self-auto
+            "
           >
-            <img src={tool.src} alt={tool.alt} className="w-full h-full object-cover" />
+            <img
+              src={tool.src}
+              alt={tool.alt}
+              className="w-full h-full object-cover"
+            />
           </div>
         ))}
       </div>

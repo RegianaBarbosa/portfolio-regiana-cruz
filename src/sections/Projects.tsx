@@ -70,10 +70,35 @@ const projectsData = [
 
 export const Projects = ({ id }: ProjectsProps) => {
   return (
-    <section id={id} className="w-full flex flex-col items-center py-24 px-6">
-      <h3 className="text-h-3 color-primary font-semibold mb-20">Projetos</h3>
+    <section
+      id={id}
+      className="
+        w-full 
+        flex flex-col 
+        items-center 
+        px-6 
+        py-20 
+        md:py-28
+      "
+    >
+      {/* TÍTULO */}
+      <h3 className="text-h-3 color-primary font-semibold mb-14 md:mb-20">
+        Projetos Recentes
+      </h3>
 
-      <div className="flex flex-col justify-center items-center gap-16 w-280">
+      {/* LISTA DE CARDS */}
+      <div
+        className="
+          flex 
+          flex-col 
+          items-center 
+          gap-14 
+          md:gap-20
+          w-full
+          max-w-3xl      /* limita largura no mobile e md */
+          lg:max-w-5xl   /* aumenta no desktop */
+        "
+      >
         {projectsData.map((project, index) => (
           <ProjectCard
             key={index}
@@ -83,7 +108,7 @@ export const Projects = ({ id }: ProjectsProps) => {
             date={project.date}
             image={project.image}
             description={project.description}
-            position={index % 2 === 0 ? "right" : "left"}
+            position={index % 2 === 0 ? "right" : "left"} // alternância apenas no desktop
             repoLink={project.repoLink}
             demoLink={project.demoLink}
           />

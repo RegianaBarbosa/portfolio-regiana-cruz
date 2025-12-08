@@ -31,19 +31,25 @@ export const Education = ({ id }: EducationProps) => {
       id={id}
       className="w-full flex justify-center items-center mt-20 scroll-mt-32"
     >
-      <div className="flex flex-col items-center w-full max-w-300 px-6 py-16">
-        <h3 className="text-h-3 color-primary font-semibold mb-12 text-center">
+      <div className="flex flex-col items-center w-full max-w-300 px-4 sm:px-6 py-16">
+        {/* Título */}
+        <h3 className="text-3xl sm:text-4xl md:text-h-3 color-primary font-semibold mb-14 text-center leading-tight">
           Formação Acadêmica
         </h3>
 
-        <div className="flex flex-col gap-10 w-full">
+        {/* Cards */}
+        <div className="flex flex-col gap-8 w-full">
           {educationData.map((edu) => (
             <div
               key={edu.key}
-              className="w-full bg-white border-2 border-primary rounded-3xl shadow-xl p-10 flex flex-col gap-4"
+              className="
+                w-full bg-white border-2 border-primary rounded-3xl shadow-xl
+                p-4 sm:p-6 md:p-8 
+                flex flex-col gap-6
+              "
             >
               {/* Cabeçalho */}
-              <div className="flex justify-between items-start">
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4">
                 <div className="flex items-start gap-4">
                   <img
                     src={edu.icon}
@@ -51,22 +57,24 @@ export const Education = ({ id }: EducationProps) => {
                     className="w-12 h-12 object-contain"
                   />
                   <div>
-                    <h4 className="text-2xl font-semibold color-primary">
+                    <h4 className="text-xl sm:text-2xl font-semibold color-primary leading-snug">
                       {edu.title}
                     </h4>
-                    <p className="font-medium color-primary-dark">
+                    <p className="font-medium color-primary-dark text-base">
                       {edu.institution}
                     </p>
                   </div>
                 </div>
 
-                <span className="italic font-medium color-primary-dark whitespace-nowrap">
+                <span className="italic font-medium color-primary-dark text-sm sm:text-base whitespace-nowrap">
                   {edu.date}
                 </span>
               </div>
 
               {/* Descrição */}
-              <p className="leading-relaxed color-black">{edu.description}</p>
+              <p className="leading-relaxed text-black text-base">
+                {edu.description}
+              </p>
             </div>
           ))}
         </div>

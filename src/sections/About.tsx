@@ -5,28 +5,24 @@ interface AboutProps {
 }
 
 export const About = ({ id }: AboutProps) => {
-  //   useEffect(() => {
-  //     if (typeof window !== "undefined" && window.AOS) {
-  //       window.AOS.refresh();
-  //     }
-  //   }, []);
-
   return (
     <section
       id={id}
-      className="relative w-full flex justify-center items-center min-h-160"
+      className="relative w-full flex justify-center items-center px-2 min-h-160"
     >
       {/* Card */}
-      <div className="flex bg-primary rounded-4xl shadow-custom">
+      <div className="flex bg-primary rounded-4xl shadow-custom w-full max-w-6xl">
         {/* Conteúdo */}
-        <div className="flex gap-8 p-12">
-          <div className="flex flex-col gap-6 max-w-200 about-container">
-            <h3 className="text-h-3 text-semibold color-white">Sobre mim</h3>
+        <div className="flex flex-col lg:flex-row gap-10 py-6 px-8">
+          {/* Texto */}
+          <div className="flex flex-col gap-6 lg:w-1/2">
+            <h3 className="text-h-3 font-semibold color-white">Sobre mim</h3>
+
             <p className="text-body color-white font-light text-justify">
               Sou graduanda em{" "}
               <span className="font-semibold">Sistemas de Informação</span> no
               IFMA e mestranda em
-              <span className="font-semibold">Engenharia Informática</span> no
+              <span className="font-semibold"> Engenharia Informática</span> no
               ISEP/IPP, trajetória iniciada após minha experiência acadêmica em
               Porto, Portugal, durante o Programa de Dupla Diplomação em 2023.
               <br />
@@ -36,8 +32,9 @@ export const About = ({ id }: AboutProps) => {
               2022 com o projeto "Bilro Arte", da Fábrica de Inovação do IFMA,
               um <span className="font-semibold">aplicativo de e-commerce</span>{" "}
               voltado para as artesãs de Raposa-MA. Também atuei no "Persona
-              Tour",{" "}
+              Tour",
               <span className="font-semibold">
+                {" "}
                 aplicativo inclusivo de turismo
               </span>{" "}
               para pessoas com deficiência e idosos.
@@ -45,8 +42,8 @@ export const About = ({ id }: AboutProps) => {
               <br />
               Em 2025, iniciei meu estágio como{" "}
               <span className="font-semibold">Desenvolvedora Front-end</span> na
-              Starblink (Grupo Lençóis Tecnologia) e, também, passei a integrar
-              o Ilha Games Studio, empresa especializada em jogos educacionais e
+              Starblink (Grupo Lençóis Tecnologia) e também passei a integrar o
+              Ilha Games Studio, empresa especializada em jogos educacionais e
               gamificação offline, como{" "}
               <span className="font-semibold">designer</span>. Essa soma de
               experiências tem guiado minha jornada como{" "}
@@ -63,10 +60,14 @@ export const About = ({ id }: AboutProps) => {
               </span>
             </p>
           </div>
-          <div className="flex w-auto justify-center items-center">
-            <div className="flex max-w-80">
-              <img src={aboutPhotos} alt="" className="object-contain" />
-            </div>
+
+          {/* Imagem */}
+          <div className="flex justify-center items-center lg:w-1/2">
+            <img
+              src={aboutPhotos}
+              alt=""
+              className="w-full max-w-xs md:max-w-sm object-contain"
+            />
           </div>
         </div>
       </div>

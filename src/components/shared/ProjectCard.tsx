@@ -27,24 +27,44 @@ export const ProjectCard = ({
 
   return (
     <div
-      className={`grid grid-cols-1 md:grid-cols-2 bg-white px-10 rounded-3xl shadow-xl border-2 border-primary justify-center items-center ${
-        isRight ? "md:flex-row-reverse" : ""
-      }`}
+      className="
+        grid 
+        grid-cols-1
+        md:grid-cols-2
+        gap-10
+        bg-white 
+        p-6 
+        md:p-10
+        rounded-3xl 
+        shadow-xl 
+        border-2 
+        border-primary
+        md:justify-center
+      "
     >
       {/* IMAGEM */}
       <div
-        className={`rounded-3xl overflow-hidden min-h-60 md:min-h-80 ${
-          isRight ? "md:order-2" : "md:order-1"
-        }`}
+        className={`
+          rounded-3xl 
+          overflow-hidden
+          min-h-30 
+          md:min-h-60
+          h-auto
+          ${isRight ? "md:order-2" : "md:order-1"}
+        `}
       >
-        <img src={image} alt={title} className="w-full h-full object-cover" />
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full 
+          md:max-h-60 object-contain scale-110"
+        />
       </div>
 
       {/* TEXTO */}
-      <div className={`max-w-120 ${isRight ? "md:order-1" : "md:order-2"}`}>
-        <div className="flex justify-between">
+      <div className={`${isRight ? "md:order-1" : "md:order-2"}`}>
+        <div className="flex justify-between mb-3">
           <div>
-            {" "}
             <h3 className="text-xl font-bold color-primary mb-1">{title}</h3>
             <p className="text-sm mb-3">{subtitle}</p>
           </div>
@@ -53,18 +73,17 @@ export const ProjectCard = ({
             {date}
           </span>
         </div>
-        {/* TAGS + DATA */}
-        <div className="flex items-center justify-between w-full mb-4">
-          <div className="color-primary-dark text-sm font-medium space-x-2 my-2">
-            {tags.map((tag, index) => (
-              <span
-                key={index}
-                className="text-xs border color-primary rounded-full px-3 py-1"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
+
+        {/* TAGS */}
+        <div className="flex flex-wrap gap-2 mb-4">
+          {tags.map((tag, index) => (
+            <span
+              key={index}
+              className="text-xs border color-primary rounded-full px-3 py-1"
+            >
+              {tag}
+            </span>
+          ))}
         </div>
 
         <p className="leading-6 text-md color-black mb-6">{description}</p>
@@ -78,9 +97,6 @@ export const ProjectCard = ({
               target="_blank"
               textClassName="text-sm"
               className="w-auto text-center font-medium color-white bg-primary px-6 py-2"
-              dataAos="fade-up"
-              dataAosDelay="150"
-              dataAosDuration="800"
             />
           )}
 
@@ -91,9 +107,6 @@ export const ProjectCard = ({
               target="_blank"
               textClassName="text-sm"
               className="w-auto text-center font-medium color-primary border px-10 py-2"
-              dataAos="fade-up"
-              dataAosDelay="200"
-              dataAosDuration="800"
             />
           )}
         </div>

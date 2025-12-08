@@ -59,7 +59,7 @@ export const Footer = () => {
       </div>
 
       {/* Direitos Autorais */}
-      <div className="text-center color-white text-sm mt-10 opacity-90">
+      <div className="text-center color-white text-sm mt-10">
         Regiana Cruz © 2025 Todos os direitos reservados.
       </div>
     </footer>

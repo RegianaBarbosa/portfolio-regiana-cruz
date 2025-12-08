@@ -84,23 +84,31 @@ export const Experience = ({ id }: ExperienceProps) => {
       id={id}
       className="relative w-full flex justify-center items-center min-h-140 mt-16 scroll-mt-32"
     >
-      <div className="flex flex-col justify-center items-center w-full">
-        <h3 className="mb-12 text-h-3 color-primary font-semibold">
-          Experiência
-        </h3>
+      <div className="flex flex-col justify-center items-center w-full px-4 md:py-20">
+        <h3 className="text-h-3 color-primary font-semibold mb-12 md:mb-20">Experiência</h3>
 
-        <div className="flex max-w-300 w-full gap-12 px-6">
-          {/* ------------------ MENU LATERAL ------------------ */}
-          <div className="flex flex-col w-1/5 gap-6">
+        <div className="flex flex-col lg:flex-row max-w-300 w-full gap-12">
+          {/* ------------------ MENU (mobile = horizontal; desktop = vertical) ------------------ */}
+          <div
+            className="
+            flex 
+            flex-wrap 
+            gap-4 
+            justify-center 
+            lg:flex-col 
+            lg:justify-start 
+            lg:w-1/5
+          "
+          >
             {experiences.map((exp) => (
               <button
                 key={exp.key}
                 onClick={() => setActive(exp.key)}
-                className={`px-6 py-3 rounded-full shadow-md color-primary transition font-medium
+                className={`px-5 py-2 rounded-full shadow-md transition font-medium
                   ${
                     active === exp.key
-                      ? "border-2 border-primary color-white bg-primary"
-                      : "border-2 border-white hover:border-primary hover:cursor-pointer"
+                      ? "bg-primary color-white border-2 border-primary"
+                      : "border-2 border-primary color-primary hover:bg-primary hover:text-white"
                   }
                 `}
               >
@@ -109,12 +117,24 @@ export const Experience = ({ id }: ExperienceProps) => {
             ))}
           </div>
 
-          {/* ------------------ ÁREA DE CONTEÚDO ------------------ */}
-          <div className="flex flex-col w-4/5 bg-white p-10 rounded-3xl shadow-xl border-2 border-primary">
+          {/* ------------------ CONTEÚDO ------------------ */}
+          <div
+            className="
+            flex flex-col 
+            w-full 
+            lg:w-4/5 
+            bg-white 
+            p-6 md:p-10 
+            rounded-3xl 
+            shadow-xl 
+            border-2 
+            border-primary
+          "
+          >
             {/* Cabeçalho */}
-            <div className="flex justify-between items-start mb-6">
+            <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-6 gap-2">
               <div>
-                <h3 className="text-2xl font-semibold color-primary">
+                <h3 className="text-xl md:text-2xl font-semibold color-primary">
                   {current.role}
                 </h3>
                 <span className="font-medium color-primary-dark">
@@ -127,13 +147,16 @@ export const Experience = ({ id }: ExperienceProps) => {
             </div>
 
             {/* Texto */}
-            <p className="leading-relaxed color-black mb-4 text-sm">
+            <p className="leading-relaxed color-black mb-4 text-sm md:text-base">
               {current.text}
             </p>
 
-            <p className="color-primary-dark font-medium mb-2">Minhas principais atividades:</p>
+            <p className="color-primary-dark font-medium mb-2">
+              Minhas principais atividades:
+            </p>
+
             {/* Lista */}
-            <ul className="list-disc ml-6 flex flex-col gap-2 text-sm">
+            <ul className="list-disc ml-6 flex flex-col gap-2 text-sm md:text-base">
               {current.bullets.map((item, i) => (
                 <li key={i}>{item}</li>
               ))}
