@@ -2,7 +2,7 @@ import gmailIcon from "../../assets/icons/gmail-svgrepo-com 1.png";
 import linkedinIcon from "../../assets/icons/linkedin-logo.png";
 import instagramIcon from "../../assets/icons/instagram-logo.png";
 import githubIcon from "../../assets/icons/github-142-svgrepo-com 1.png";
-import logo from "../../assets/brand/logo-rb.png";
+import logo from "../../assets/brand/logo-rc.png";
 
 export const Footer = () => {
   return (

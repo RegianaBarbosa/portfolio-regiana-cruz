@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Container } from "../shared/Container";
-import logo from "../../assets/brand/logo-rb.png";
+import logo from "../../assets/brand/logo-rc.png";
 import { Sidebar } from "./Sidebar";
 import { Menu } from "lucide-react";
 

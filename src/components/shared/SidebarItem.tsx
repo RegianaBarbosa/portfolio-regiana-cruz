@@ -15,7 +15,7 @@ export const SideBarItem = ({
     <li>
       <a
         href={href}
-        className={`text-body font-semibold color-primary transform transition duration-300 ${className}`}
+        className={`transform transition duration-300 ${className}`}
         onClick={onClick}
       >
         {text}
