@@ -9,7 +9,7 @@ export const Hero = ({ id }: HeroProps) => {
   return (
     <section
       id={id}
-      className="w-full flex items-center justify-center min-h-screen scroll-mt-16"
+      className="w-full flex items-center justify-center min-h-screen mb-16 scroll-mt-16"
     >
       <div className="flex flex-col-reverse lg:flex-row w-full items-center justify-between px-6 md:px-16 lg:px-40 gap-8 lg:gap-0">
         {/* Texto */}
@@ -18,19 +18,19 @@ export const Hero = ({ id }: HeroProps) => {
             Olá! Eu sou a Regiana Cruz
           </h4>
 
-          <h2 className="mt-4 text-h-2 font-semibold color-secondary">
+          <h2 className="mt-3 lg:mt-6 text-h-2 font-semibold color-secondary">
             UX/UI Designer & <br />
             <span className="color-primary">Frontend Developer</span>
           </h2>
 
-          <p className="mt-6 text-body color-black leading-6 max-w-md">
+          <p className="mt-4 lg:mt-8 text-xs lg:text-base color-black leading-5 max-w-md lg:max-w-xl">
             Transformo ideias em interfaces que expressam criatividade e causam
             impacto para que seus clientes tenham a melhor experiência possível
             e sua empresa os melhores resultados.
           </p>
 
           {/* Botões */}
-          <div className="flex flex-col md:flex-row items-center justify-center md:justify-start gap-6 mt-16">
+          <div className="flex flex-col md:flex-row items-center justify-center md:justify-start gap-4 mt-6 md:mt-16">
             <BtnLink
               text="Vamos conversar?"
               textClassName="text-body"
@@ -54,7 +54,7 @@ export const Hero = ({ id }: HeroProps) => {
           <img
             src={profile}
             alt="Foto de Regiana Cruz"
-            className="w-60 h-60 md:w-72 md:h-72 lg:w-md lg:h-112 object-cover rounded-full"
+            className="w-50 h-50 md:w-72 md:h-72 lg:w-md lg:h-112 object-cover rounded-full"
           />
         </div>
       </div>
