@@ -50,10 +50,10 @@ export const Hero = ({ id }: HeroProps) => {
         </div>
 
         {/* Imagem */}
-        <div className="flex w-full lg:w-1/2 justify-center items-center">
+        <div className="flex w-full lg:w-1/2 justify-center items-center mt-8 lg:mt-0">
           <img
             src={profile}
-            alt=""
+            alt="Foto de Regiana Cruz"
             className="w-60 h-60 md:w-72 md:h-72 lg:w-md lg:h-112 object-cover rounded-full"
           />
         </div>
