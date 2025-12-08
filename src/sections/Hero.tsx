@@ -11,7 +11,7 @@ export const Hero = ({ id }: HeroProps) => {
       id={id}
       className="w-full flex items-center justify-center min-h-screen scroll-mt-16"
     >
-      <div className="flex flex-col-reverse lg:flex-row w-full items-center justify-between px-6 md:px-16 lg:px-40 gap-16 lg:gap-0">
+      <div className="flex flex-col-reverse lg:flex-row w-full items-center justify-between px-6 md:px-16 lg:px-40 gap-8 lg:gap-0">
         {/* Texto */}
         <div className="flex flex-col w-full lg:w-1/2 items-center text-center lg:items-start lg:text-left">
           <h4 className="text-h-5 color-primary-dark">
@@ -50,7 +50,7 @@ export const Hero = ({ id }: HeroProps) => {
         </div>
 
         {/* Imagem */}
-        <div className="flex w-full lg:w-1/2 justify-center items-center mt-8 lg:mt-0">
+        <div className="flex w-full lg:w-1/2 justify-center items-center mt-24 lg:mt-0">
           <img
             src={profile}
             alt="Foto de Regiana Cruz"
