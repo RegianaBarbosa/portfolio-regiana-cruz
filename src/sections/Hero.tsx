@@ -1,5 +1,8 @@
 import profile from "../assets/imgs/profile.png";
 import { BtnLink } from "../components/shared/BtnLink";
+import iconArrowOutward from "../assets/icons/arrow_outward_branco.svg";
+import iconDownload from "../assets/icons/download_violeta.svg";
+import iconMail from "../assets/icons/mail_violeta.svg";
 
 interface HeroProps {
   id: string;
@@ -9,52 +12,65 @@ export const Hero = ({ id }: HeroProps) => {
   return (
     <section
       id={id}
-      className="w-full flex items-center justify-center min-h-screen mb-16 scroll-mt-16"
+      className="w-full flex items-center justify-center min-h-screen md:p-28 lg:p-32 scroll-mt-16"
     >
       <div className="flex flex-col-reverse lg:flex-row w-full items-center justify-between px-6 md:px-16 lg:px-40 gap-8 lg:gap-0">
         {/* Texto */}
-        <div className="flex flex-col w-full lg:w-1/2 items-center text-center lg:items-start lg:text-left">
-          <h4 className="text-h-5 color-primary-dark">
+        <div className="flex flex-col w-full  items-center text-center lg:items-start lg:text-left">
+          <h4 className="text-h4 text-brand-roxo">
             Olá! Eu sou a Regiana Cruz
           </h4>
 
-          <h2 className="mt-3 lg:mt-6 text-h-2 font-semibold color-secondary">
+          <h2 className="mt-3 lg:mt-6 text-h1 font-semibold text-brand-turquesa">
             UX/UI Designer & <br />
-            <span className="color-primary">Frontend Developer</span>
+            <span className="text-brand-violeta">Frontend Developer</span>
           </h2>
 
-          <p className="mt-4 lg:mt-8 text-xs lg:text-base color-black leading-5 max-w-md lg:max-w-xl">
-            Transformo ideias em interfaces que expressam criatividade e causam
-            impacto para que seus clientes tenham a melhor experiência possível
-            e sua empresa os melhores resultados.
+          <p className="mt-4 lg:mt-8 text-body-lg text-neutral-black leading-5 max-w-md lg:max-w-xl">
+            Acredito que bom design não está apenas no visual, mas abordar o
+            problema certo e resolver com clareza, eficiência e intenção.
           </p>
 
           {/* Botões */}
           <div className="flex flex-col md:flex-row items-center justify-center md:justify-start gap-4 mt-6 md:mt-16">
             <BtnLink
-              text="Vamos conversar?"
+              text="Veja o meu trabalho"
+              icon={
+                <img src={iconArrowOutward} alt="Ícone de seta para fora" />
+              }
+              href={""}
+              target="_blank"
+              rel="noopener noreferrer"
               textClassName="text-body"
-              href="#contato"
-              className="w-auto text-center font-medium color-white bg-primary px-10 py-4"
+              className="btn-solid-violeta"
             />
 
             <BtnLink
-              text="Baixar currículo"
+              text="Baixar CV"
+              icon={<img src={iconDownload} alt="Ícone de download" />}
               href={"/portfolio-regiana-cruz/Currículo_RegianaCruz.pdf"}
               target="_blank"
               rel="noopener noreferrer"
               textClassName="text-body"
-              className="w-auto text-center font-medium color-primary border px-10 py-4"
+              className="btn-outline-violeta"
+            />
+
+            <BtnLink
+              text="Fale comigo"
+              icon={<img src={iconMail} alt="Ícone de envelope" />}
+              textClassName="text-body"
+              href="#contato"
+              className="btn-outline-violeta"
             />
           </div>
         </div>
 
         {/* Imagem */}
-        <div className="flex w-full lg:w-1/2 justify-center items-center mt-24 lg:mt-0">
+        <div className="flex w-full lg:max-w-100 justify-center items-center mt-24 lg:mt-0">
           <img
             src={profile}
             alt="Foto de Regiana Cruz"
-            className="w-50 h-50 md:w-72 md:h-72 lg:w-md lg:h-112 object-cover rounded-full"
+            className="w-50 h-55 md:w-70 md:h-75 lg:w-md lg:h-125 object-cover rounded-[3.5rem] scale-x-[-1] rotate-[6deg] lg:rotate-[12deg] shadow-md"
           />
         </div>
       </div>
