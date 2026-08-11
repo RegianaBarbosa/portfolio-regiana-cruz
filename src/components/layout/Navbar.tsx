@@ -6,11 +6,9 @@ import { Menu } from "lucide-react";
 
 const navItems = [
   { href: "#home", text: "Início" },
+  { href: "#servicos", text: "Serviços" },
   { href: "#sobre-mim", text: "Sobre mim" },
-  { href: "#experiencias", text: "Experiências" },
   { href: "#projetos", text: "Projetos" },
-  { href: "#formacao", text: "Formação" },
-  { href: "#contato", text: "Contato" },
 ];
 
 export const Navbar = () => {
@@ -68,7 +66,7 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <header className="fixed insert-x-0 top-0 z-50 py-2 w-full bg-white lg:bg-transparent">
+    <header className="fixed inset-x-0 top-0 z-50 py-2 w-full bg-neutral-white lg:bg-transparent border-b border-neutral-border lg:border-none">
       <Container>
         <nav className="w-full flex justify-between items-center relative md:py-4">
           {/* Logo — aparece só no mobile */}
@@ -76,22 +74,22 @@ export const Navbar = () => {
             <img
               src={logo}
               alt="Logo"
-              className="w-30 md:w-50 object-contain"
+              className="w-32 md:w-44 object-contain"
             />
           </a>
 
-          {/* Botão mobile */}
+          {/* Botão Mobile Corrigido (Ícone Violeta/Lilás) */}
           <button
             onClick={toggleSidebar}
             aria-label="Abrir menu de navegação"
-            className="lg:hidden z-20 p-2 text-white"
+            className="lg:hidden z-20 p-2 text-brand-lilas hover:text-brand-violeta transition-colors cursor-pointer"
           >
-            <Menu className="h-6 w-6 color-primary" />
+            <Menu className="h-7 w-7" />
           </button>
 
           {/* Menu Desktop */}
           <div className="hidden lg:flex w-full justify-center">
-            <ul className="flex items-center gap-12">
+            <ul className="flex items-center gap-8">
               {navItems.map((item) => {
                 const isActive = activeSection === item.href;
 
@@ -100,13 +98,13 @@ export const Navbar = () => {
                     <button
                       onClick={() => handleScrollToSection(item.href)}
                       className={`
-                    px-6 py-2 text-sm font-medium transition-all duration-300
-                    ${
-                      isActive
-                        ? "bg-primary color-white rounded-full shadow-md"
-                        : "cursor-pointer color-primary text-primary hover:bg-primary/10 hover:border hover:border-primary hover:rounded-full transition-border smoth ease-in-out"
-                    }
-                  `}
+                        px-6 py-2 text-body-sm font-medium transition-all duration-300 rounded-full cursor-pointer
+                        ${
+                          isActive
+                            ? "bg-brand-lilas text-neutral-white shadow-focus-8"
+                            : "text-brand-violeta hover:bg-brand-lilas/10 hover:text-brand-lilas"
+                        }
+                      `}
                     >
                       {item.text}
                     </button>
