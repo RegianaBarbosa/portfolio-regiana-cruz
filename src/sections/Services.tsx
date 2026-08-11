@@ -46,14 +46,14 @@ export const Services = ({ id }: ServicesProps) => {
       id={id}
       className="w-full py-16 md:py-24 flex flex-col items-center justify-center scroll-mt-16"
     >
-      <div className="w-full mx-auto px-32">
+      <div className="w-full mx-auto px-6 md:px-16 lg:px-32">
         
         {/* CABEÇALHO DA SEÇÃO (ALINHADO À ESQUERDA) */}
-        <div className="flex flex-col items-start text-lefT mb-12 space-y-3">
+        <div className="flex flex-col items-start text-lefT mb-12 space-y-1">
           
           {/* Tag com Seta Turquesa */}
           <div className="flex items-center gap-2 text-brand-turquesa text-body-lg">
-            <span className="text-xl leading-none">→</span>
+            <span className="text-2xl leading-none">→</span>
             <span>Meus Serviços</span>
           </div>
 
@@ -69,7 +69,7 @@ export const Services = ({ id }: ServicesProps) => {
         </div>
 
         {/* GRID DOS CARDS DE SERVIÇOS */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {servicesData.map((service, index) => (
             <ServiceCard
               key={index}
