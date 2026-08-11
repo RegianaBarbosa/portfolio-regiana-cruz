@@ -2,7 +2,7 @@
   "homepage": "https://regianabarbosa.github.io/portfolio-regiana-cruz/",
   "name": "portfolio-regiana-cruz",
   "private": true,
-  "version": "0.1.0",
+  "version": "2.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
