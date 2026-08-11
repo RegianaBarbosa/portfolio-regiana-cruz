@@ -1,0 +1,86 @@
+import { ServiceCard } from "../components/shared/ServiceCard";
+import iconUx from "../assets/icons/psychology_violeta.svg";
+import iconUi from "../assets/icons/design_services_violeta.svg";
+import iconCode from "../assets/icons/code_violeta.svg";
+
+interface ServicesProps {
+  id: string;
+}
+
+const servicesData = [
+  {
+    title: "UX Design & Research",
+    icon: iconUx,
+    items: [
+      "Descoberta de necessidades e oportunidades através de pesquisa e análise de usuários.",
+      "Estruturação de jornadas, fluxos e arquiteturas de informação intuitivas.",
+      "Testes de usabilidade para obter feedback e aprimorar soluções.",
+      "Implementação de princípios de design inclusivo e acessível em projetos.",
+    ],
+  },
+  {
+    title: "UI Design & Design Systems",
+    icon: iconUi,
+    items: [
+      "Criação de interfaces acessíveis, consistentes e visualmente atraentes.",
+      "Desenvolvimento de protótipos e wireframes interativos para validação de ideias.",
+      "Construção e evolução de Design Systems para escalabilidade de produtos.",
+      "Definição de padrões visuais que fortalecem a identidade e a usabilidade.",
+    ],
+  },
+  {
+    title: "Frontend Development",
+    icon: iconCode,
+    items: [
+      "Desenvolvimento de interfaces modernas e responsivas para web.",
+      "Tradução de protótipos em experiências funcionais e acessíveis.",
+      "Implementação de componentes reutilizáveis alinhados ao Design System.",
+      "Garantia de qualidade visual e técnica em colaboração com equipes de produto e tecnologia.",
+    ],
+  },
+];
+
+export const Services = ({ id }: ServicesProps) => {
+  return (
+    <section
+      id={id}
+      className="w-full py-16 md:py-24 flex flex-col items-center justify-center scroll-mt-16"
+    >
+      <div className="w-full mx-auto px-32">
+        
+        {/* CABEÇALHO DA SEÇÃO (ALINHADO À ESQUERDA) */}
+        <div className="flex flex-col items-start text-lefT mb-12 space-y-3">
+          
+          {/* Tag com Seta Turquesa */}
+          <div className="flex items-center gap-2 text-brand-turquesa text-body-lg">
+            <span className="text-xl leading-none">→</span>
+            <span>Meus Serviços</span>
+          </div>
+
+          {/* Título Principal Violeta */}
+          <h2 className="text-h2 text-brand-violeta font-bold tracking-tight">
+            O que posso lhe oferecer
+          </h2>
+
+          {/* Descrição em Cinza Escuro */}
+          <p className="text-body-lg md:text-body-lg text-neutral-gray-dark leading-relaxed pt-6">
+            Mais do que criar telas, eu desenvolvo experiências digitais que conectam sua marca ao público certo.
+          </p>
+        </div>
+
+        {/* GRID DOS CARDS DE SERVIÇOS */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {servicesData.map((service, index) => (
+            <ServiceCard
+              key={index}
+              title={service.title}
+              icon={service.icon}
+              items={service.items}
+            />
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+};

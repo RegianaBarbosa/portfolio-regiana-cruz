@@ -5,6 +5,7 @@ import { Tools } from "./sections/Tools";
 import { Experience } from "./sections/Experience";
 import { Projects } from "./sections/Projects";
 import { Education } from "./sections/Education";
+import { Services } from "./sections/Services";
 // import { Contact } from "./sections/Contact";
 
 function App() {
@@ -17,11 +18,9 @@ function App() {
       {" "}
       <Layout title="Regiana Cruz | Portfolio">
         <Hero id="home" />
+        <Services id="servicos" />
         <About id="sobre-mim" />
-        <Experience id="experiencias" />
-        <Tools id="ferramentas" />
         <Projects id="projetos" />
-        <Education id="formacao" />
         {/* <Contact id="contato"/>  */}
       </Layout>
     </>
