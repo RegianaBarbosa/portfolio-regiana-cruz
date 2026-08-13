@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { Container } from "../shared/Container";
 import logo from "../../assets/brand/logo-rc.png";
 import { Sidebar } from "./Sidebar";
@@ -11,13 +13,16 @@ export interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { href: "#home", text: "Home", isPage: false },
-  { href: "#projetos", text: "Projetos", isPage: false },
-  { href: "/sobre-mim", text: "Sobre mim", isPage: true },
-  { href: "#contato", text: "Contato", isPage: false },
+  { href: "#home", text: "Home" },
+  { href: "#projetos", text: "Projetos" },
+  { href: "/sobre", text: "Sobre mim", isPage: true },
+  { href: "#form-contato", text: "Contato" },
 ];
 
 export const Navbar = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("#home");
 
@@ -26,55 +31,65 @@ export const Navbar = () => {
   // Trata o clique decidindo entre redirecionar página ou fazer scroll suave
   const handleNavClick = (item: NavItem) => {
     if (item.isPage) {
-      window.location.href = item.href;
-    } else {
-      handleScrollToSection(item.href);
-    }
-    setIsSidebarOpen(false);
-  };
-
-  const handleScrollToSection = (id: string) => {
-    const section = document.querySelector(id);
-    if (!section) {
-      window.location.href = `/${id}`;
+      navigate(item.href);
       return;
     }
 
+    if (location.pathname !== "/") {
+      navigate("/", {
+        state: { scrollTo: item.href },
+      });
+      return;
+    }
+
+    handleScrollToSection(item.href);
+  };
+
+  const handleScrollToSection = (id: string) => {
+    if (location.pathname !== "/") {
+      navigate("/");
+      return;
+    }
+
+    const section = document.querySelector(id);
+
+    if (!section) return;
+
     const navbarHeight = document.querySelector("header")?.offsetHeight || 80;
+
     const sectionTop = section.getBoundingClientRect().top + window.scrollY;
 
     window.scrollTo({
       top: sectionTop - navbarHeight,
       behavior: "smooth",
     });
-
-    setActiveSection(id);
-    setIsSidebarOpen(false);
   };
 
   // ScrollSpy ultra-confiável
   useEffect(() => {
+    if (location.pathname !== "/") return;
+
     const handleScroll = () => {
       const navbarHeight = document.querySelector("header")?.offsetHeight || 80;
-      // Ponto de checagem offset em relação à barra de navegação + margem de leitura
+
       const scrollPosition = window.scrollY + navbarHeight + 150;
 
-      // Filtra itens com scroll interno (#)
       const localItems = navItems.filter(
-        (item) => !item.isPage && item.href.startsWith("#")
+        (item) => !item.isPage && item.href.startsWith("#"),
       );
 
-      // Mapeia os elementos que existem no DOM no momento
       const sections = localItems
         .map((item) => ({
           href: item.href,
           el: document.querySelector(item.href) as HTMLElement | null,
         }))
-        .filter((item): item is { href: string; el: HTMLElement } => item.el !== null);
+        .filter(
+          (item): item is { href: string; el: HTMLElement } => item.el !== null,
+        );
 
-      // Percorre as seções de baixo para cima para identificar a seção atual em tela
       for (let i = sections.length - 1; i >= 0; i--) {
         const { href, el } = sections[i];
+
         if (scrollPosition >= el.offsetTop) {
           setActiveSection(href);
           break;
@@ -82,11 +97,14 @@ export const Navbar = () => {
       }
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // Executa uma vez no carregamento
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [location.pathname]);
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 py-2 w-full bg-neutral-white lg:bg-transparent border-b border-neutral-border lg:border-none">
@@ -122,9 +140,12 @@ export const Navbar = () => {
             <ul className="flex items-center gap-8">
               {navItems.map((item) => {
                 const isCurrentPage =
-                  item.isPage && window.location.pathname === item.href;
+                  item.isPage && location.pathname === item.href;
                 const isCurrentSection =
-                  !item.isPage && activeSection === item.href;
+                  !item.isPage &&
+                  location.pathname === "/" &&
+                  activeSection === item.href;
+
                 const isActive = isCurrentPage || isCurrentSection;
 
                 return (

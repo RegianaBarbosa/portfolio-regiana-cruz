@@ -18,7 +18,7 @@ function App() {
         <Services id="servicos" />
         {/* <About id="sobre-mim" /> */}
         <Projects id="projetos" />
-        <FormContact id="contato"/> 
+        <FormContact id="form-contato"/> 
       </Layout>
     </>
   );
