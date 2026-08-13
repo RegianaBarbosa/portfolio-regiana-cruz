@@ -1,0 +1,43 @@
+doctype html
+html(lang="pt-BR")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Nova Mensagem do Portfólio
+    style.
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap');
+      body { margin: 0; padding: 0; background-color: #F8F7F4; font-family: 'Inter', Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+      .container { width: 100%; table-layout: fixed; background-color: #F8F7F4; padding: 40px 12px; }
+      .card { max-width: 580px; margin: 0 auto; background-color: #FFFFFF; border-radius: 24px; border: 1px solid #E5E7EB; overflow: hidden; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04); }
+      .header { background-color: #4A10D1; padding: 32px 36px; text-align: left; }
+      .brand-title { font-family: 'Poppins', Arial, sans-serif; font-size: 20px; font-weight: 600; color: #FFFFFF; margin: 0; tracking-tight: -0.5px; }
+      .content { padding: 36px; }
+      .field { margin-bottom: 20px; }
+      .label { font-size: 12px; font-weight: 600; color: #4A10D1; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; display: block; }
+      .value { font-size: 16px; color: #222222; font-weight: 500; }
+      .message-box { background-color: #F8F7F4; border: 1px solid #E5E7EB; border-radius: 8px; padding: 16px; font-size: 15px; color: #444444; line-height: 1.6; white-space: pre-line; margin-top: 6px; }
+      .footer { background-color: #FAFAFA; border-top: 1px solid #E5E7EB; padding: 20px 36px; text-align: center; font-size: 12px; color: #9CA3AF; }
+      .btn-reply { display: inline-block; margin-top: 24px; background-color: #27BFAA; color: #ffffff; font-family: 'Inter', sans-serif; font-weight: 500; font-size: 14px; text-decoration: none; padding: 12px 28px; border-radius: 32px; }
+  body
+    .container
+      .card
+        .header
+          h1.brand-title Nova mensagem do seu portfólio
+        
+        .content
+          .field
+            span.label Nome do Contato
+            span.value #{nome}
+          
+          .field
+            span.label E-mail
+            span.value #{email}
+          
+          .field
+            span.label Mensagem Enviada
+            .message-box #{mensagem}
+          
+          a.btn-reply(href=`mailto:${email}?subject=Re:%20Contato%20via%20Portf%C3%B3lio`, style="color: #ffffff !important; text-decoration: none;") Responder
+        
+        .footer
+          p Este e-mail foi gerado automaticamente através do formulário do seu portfólio.
