@@ -61,11 +61,6 @@ export const Services = ({ id }: ServicesProps) => {
           <h2 className="text-h2 text-brand-violeta font-bold tracking-tight">
             O que posso lhe oferecer
           </h2>
-
-          {/* Descrição em Cinza Escuro */}
-          <p className="text-body-lg md:text-body-lg text-neutral-gray-dark leading-relaxed pt-6">
-            Mais do que criar telas, eu desenvolvo experiências digitais que conectam sua marca ao público certo.
-          </p>
         </div>
 
         {/* GRID DOS CARDS DE SERVIÇOS */}
