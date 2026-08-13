@@ -71,7 +71,7 @@ export const FormContact: React.FC<FormContactProps> = ({ id }) => {
   return (
     <section
       id={id}
-      className="w-full bg-brand-roxo text-neutral-white py-20 md:py-28 px-6 md:px-16 lg:px-32 scroll-mt-16"
+      className="w-full bg-brand-roxo text-neutral-white py-8 md:pt-28 px-6 md:px-16 lg:px-32"
     >
       <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 justify-center mx-auto">
         {/* LADO ESQUERDO: TEXTO E REDES SOCIAIS */}
@@ -233,6 +233,10 @@ export const FormContact: React.FC<FormContactProps> = ({ id }) => {
             <div className="w-full flex justify-center italic text-body-sm"><p>Respondo em até 24 horas</p></div>
           </form>
         </div>
+      </div>
+      {/* Direitos Autorais */}
+      <div className="text-center text-neutral-white-opacity-25 text-body-md pt-24">
+        Regiana Cruz © 2025 Todos os direitos reservados.
       </div>
     </section>
   );
