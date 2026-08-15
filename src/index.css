@@ -191,59 +191,76 @@ body {
   }
 
   /* ---------- TIPOGRAFIA SEMÂNTICA ---------- */
+
   .text-h1 {
     font-family: var(--font-display);
-    font-size: 72px;
-    line-height: 110%;
+    font-size: clamp(2.25rem, 5vw + 1rem, 4.5rem); /* 36px → 72px */
+    line-height: 1.1;
     font-weight: 600;
+    letter-spacing: -0.02em;
   }
+
   .text-h2 {
     font-family: var(--font-display);
-    font-size: 56px;
-    line-height: 125%;
+    font-size: clamp(1.875rem, 3.5vw + 1rem, 3.5rem); /* 30px → 56px */
+    line-height: 1.2;
     font-weight: 600;
+    letter-spacing: -0.015em;
   }
+
   .text-h3 {
     font-family: var(--font-display);
-    font-size: 38px;
-    line-height: 140%;
+    font-size: clamp(1.5rem, 2vw + 1rem, 2.375rem); /* 24px → 38px */
+    line-height: 1.3;
     font-weight: 600;
+    letter-spacing: -0.01em;
   }
+
   .text-h4 {
     font-family: var(--font-display);
-    font-size: 24px;
-    line-height: 140%;
-    font-weight: 500;
-  }
-  .text-h5 {
-    font-family: var(--font-display);
-    font-size: 19px;
-    line-height: 140%;
+    font-size: clamp(1.25rem, 1vw + 1rem, 1.5rem); /* 20px → 24px */
+    line-height: 1.4;
     font-weight: 500;
   }
 
-  .text-body-lg {
-    font-family: var(--font-body);
-    font-size: 20px;
-    line-height: 125%;
+  .text-h5 {
+    font-family: var(--font-display);
+    font-size: clamp(1rem, 0.5vw + 0.875rem, 1.1875rem); /* 16px → 19px */
+    line-height: 1.4;
     font-weight: 500;
   }
+
+  /* ---------- CORPO DE TEXTO FLUIDO (BODY) ---------- */
+
+  .text-body-lg {
+    font-family: var(--font-body);
+    font-size: clamp(1.0625rem, 0.5vw + 0.95rem, 1.25rem); /* 17px → 20px */
+    line-height: 1.5; /* 150% - ideal para parágrafos de destaque/lead */
+    font-weight: 500;
+  }
+
   .text-body-md {
     font-family: var(--font-body);
-    font-size: 16px;
-    line-height: 125%;
+    font-size: clamp(0.9375rem, 0.25vw + 0.875rem, 1rem); /* 15px → 16px */
+    line-height: 1.6; /* 160% - padrão ouro de legibilidade para leitura longa */
     font-weight: 400;
   }
+
   .text-body-sm {
     font-family: var(--font-body);
-    font-size: 14px;
-    line-height: 125%;
+    font-size: clamp(0.8125rem, 0.2vw + 0.78rem, 0.875rem); /* 13px → 14px */
+    line-height: 1.45; /* 145% */
     font-weight: 400;
   }
+
   .text-body-xs {
     font-family: var(--font-body);
-    font-size: 12px;
-    line-height: 125%;
+    font-size: clamp(
+      0.75rem,
+      0.1vw + 0.72rem,
+      0.75rem
+    ); /* Fixo em 12px (mínimo acessível) */
+    line-height: 1.4; /* 140% */
     font-weight: 400;
   }
 
@@ -264,7 +281,7 @@ body {
     display: none;
   }
 
-  .tag{
+  .tag {
     background-color: var(--color-brand-turquesa-opacity-20);
     color: var(--color-brand-turquesa);
     font-family: var(--font-body);
@@ -272,6 +289,59 @@ body {
     border: 1px solid var(--color-brand-turquesa);
     border-radius: 32px;
     padding: 0.25rem 0.8rem;
+  }
+
+  .experience-metric-card {
+    background-color: var(--color-brand-violeta);
+    color: var(--color-neutral-white);
+    border: 1px solid var(--color-neutral-border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    max-width: 196px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .experience-metric-card:hover {
+    transform: translateY(-3px);
+    duration: 0.3s;
+    box-shadow: 16px 16px 32px 0 rgba(30, 30, 30, 0.2);
+  }
+
+  .experience-metric-card h1 {
+    color: var(--color-neutral-white);
+  }
+
+  /* ---------- CARD DE EXPERIÊNCIA PROFISSIONAL ---------- */
+  .career-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 1.5rem;
+
+    background-color: var(--color-neutral-white, #ffffff);
+    border: 1px solid var(--color-neutral-border, #e5e7eb);
+    border-radius: 1.5rem; 
+
+    box-shadow: var(--shadow-focus-8, 0 0 8px 0 rgba(0, 0, 0, 0.05));
+    transition: all 300ms ease;
+    cursor: pointer;
+  }
+
+  @media (min-width: 768px) {
+    .career-card {
+      padding: 2rem;
+    }
+  }
+
+  .career-card:hover {
+    transform: translateY(-0.3rem); 
+    box-shadow: var(--shadow-custom, 8px 8px 16px 0 rgba(30, 30, 30, 0.1));
+    border-color: rgba(159, 76, 244, 0.5);
   }
 
   /* Botão Flutuante */
