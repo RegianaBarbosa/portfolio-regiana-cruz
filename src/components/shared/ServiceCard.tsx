@@ -28,7 +28,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
   icon,
 }) => {
   return (
-    <div className="group bg-neutral-white border border-neutral-border rounded-3xl p-6 md:p-8 flex flex-col justify-between shadow-focus-8 hover:shadow-custom hover:-translate-y-2 hover:border-brand-lilas/50 transition-all duration-300 cursor-pointer">
+    <div className="group bg-neutral-white border border-neutral-border rounded-3xl p-6 md:p-8 flex flex-col justify-between shadow-focus-8 hover:shadow-custom hover:-translate-y-2 hover:border-brand-lilas/50 transition-all duration-300">
       <div>
         {/* CABEÇALHO DO CARD: Círculo com Ícone + Título Violeta */}
         <div className="flex items-center gap-3 mb-6">
