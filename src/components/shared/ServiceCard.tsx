@@ -1,20 +1,6 @@
 import React from "react";
+import { CheckCircleIcon } from "./CheckCircleIcon";
 
-// Ícone de Checkmark Circular Turquesa
-const CheckCircleIcon = () => (
-  <svg
-    className="w-5 h-5 text-brand-turquesa shrink-0"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <circle cx="12" cy="12" r="10" />
-    <path d="m9 12 2 2 4-4" />
-  </svg>
-);
 
 interface ServiceCardProps {
   title: string;
@@ -53,7 +39,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
         <ul className="space-y-4">
           {items.map((item, index) => (
             <li key={index} className="flex items-start gap-3">
-              <CheckCircleIcon />
+              <CheckCircleIcon className="text-brand-turquesa"/>
               <p className="text-body-sm text-neutral-gray-dark leading-relaxed">
                 {item}
               </p>

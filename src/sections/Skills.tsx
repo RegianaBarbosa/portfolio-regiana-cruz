@@ -1,19 +1,5 @@
+import { CheckCircleIcon } from "../components/shared/CheckCircleIcon";
 import { toolsData } from "../data/toolsData";
-// Ícone de Checkmark Circular Turquesa
-const CheckCircleIcon = () => (
-  <svg
-    className="w-5 h-5 text-brand-turquesa shrink-0"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <circle cx="12" cy="12" r="10" />
-    <path d="m9 12 2 2 4-4" />
-  </svg>
-);
 
 const toolGroups = [
   "UX/UI Design",
@@ -56,7 +42,7 @@ export const Skills = ({ id }: SkillsProps) => {
           <ul className="my-12 space-y-4">
             {toolGroups.map((item, index) => (
               <li key={index} className="flex items-start gap-3">
-                <CheckCircleIcon />
+                <CheckCircleIcon className="text-brand-turquesa" />
                 <p className="text-body-lg text-neutral-black leading-relaxed">
                   {item}
                 </p>
