@@ -47,7 +47,7 @@ export const Hero = ({ id }: HeroProps) => {
               }
               href="#projetos"
               rel="noopener noreferrer"
-              textClassName="text-body-md font-medium"
+              textClassName="text-body-lg"
               className="btn-solid-violeta w-full sm:w-auto"
             />
 
@@ -63,7 +63,7 @@ export const Hero = ({ id }: HeroProps) => {
               href={"/portfolio-regiana-cruz/Currículo_RegianaCruz.pdf"}
               target="_blank"
               rel="noopener noreferrer"
-              textClassName="text-body-md font-medium"
+              textClassName="text-body-lg"
               className="btn-outline-violeta w-full sm:w-auto"
             />
 
@@ -77,7 +77,7 @@ export const Hero = ({ id }: HeroProps) => {
                 />
               }
               href="#contato"
-              textClassName="text-body-md font-medium"
+              textClassName="text-body-lg"
               className="btn-outline-violeta w-full sm:w-auto"
             />
           </div>

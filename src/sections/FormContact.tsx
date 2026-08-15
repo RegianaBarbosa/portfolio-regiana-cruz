@@ -234,9 +234,10 @@ export const FormContact: React.FC<FormContactProps> = ({ id }) => {
           </form>
         </div>
       </div>
-      {/* Direitos Autorais */}
+      
+      {/* COPYRIGHT */}
       <div className="text-center text-neutral-white-opacity-25 text-body-md pt-24">
-        Regiana Cruz © 2025 Todos os direitos reservados.
+        Regiana Cruz © 2026 Todos os direitos reservados.
       </div>
     </section>
   );
