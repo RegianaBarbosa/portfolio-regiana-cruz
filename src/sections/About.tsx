@@ -18,13 +18,13 @@ export const About = ({ id }: AboutProps) => {
             Sobre mim
           </span>
 
-          <h2 className="mt-4 mb-12 text-h2 md:text-h2 lg:text-h1 font-semibold text-brand-lilas leading-tight">
+          <h2 className="mt-4 mb-12 text-h1 font-semibold text-brand-lilas leading-tight">
             Regiana
             <span className="text-brand-turquesa"> Cruz</span>
           </h2>
 
           {/* Texto Biográfico idêntico ao protótipo PDF */}
-          <div className="space-y-4 text-body-md lg:text-body-lg text-neutral-black tracking-wide text-justify">
+          <div className="space-y-4 text-body-lg text-neutral-black tracking-wide text-justify">
             <p className="leading-normal">
               Sou formada em{" "}
               <span className="font-bold">Sistemas de Informação</span> pelo
@@ -59,7 +59,7 @@ export const About = ({ id }: AboutProps) => {
           </div>
 
           {/* CARDS DE MÉTRICAS */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 w-full pt-16">
+          <div className="grid grid-cols-1 sm:grid-cols-3  gap-6 pt-16">
             {/* Card 1 */}
             <div className="experience-metric-card">
               <h1 className="text-h2 md:text-h1 text-neutral-white leading-none mb-2">

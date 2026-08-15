@@ -1,7 +1,7 @@
 import { Layout } from "../components/Layout";
-import { Footer } from "../components/layout/Footer";
 import { About } from "../sections/About";
 import { EducationExperience } from "../sections/EducationExperience";
+import { FormContact } from "../sections/FormContact";
 import { Skills } from "../sections/Skills";
 
 const AboutPage = () => {
@@ -10,7 +10,7 @@ const AboutPage = () => {
       <About id="sobre" />
       <Skills id="habilidades" />
       <EducationExperience id="educacao-experiencia"/>
-      <Footer/>
+      <FormContact id="form-contato"/>
     </Layout>
   );
 };
