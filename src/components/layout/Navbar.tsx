@@ -161,7 +161,7 @@ export const Navbar = () => {
                     <button
                       onClick={() => handleNavClick(item)}
                       className={`
-                        px-6 py-2 text-body-sm font-medium transition-all duration-300 rounded-full cursor-pointer
+                        px-6 py-2 text-body-md transition-all duration-300 rounded-full cursor-pointer
                         ${
                           isActive
                             ? "bg-brand-violeta text-neutral-white shadow-focus-8 hover:bg-brand-roxo"
