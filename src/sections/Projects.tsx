@@ -58,9 +58,8 @@ export const Projects = ({ id, onOpenCase }: ProjectsProps) => {
         flex flex-col 
         items-center
         px-6 md:px-16 lg:px-32
-        py-20 md:py-28
+        py-24 md:py-32
         bg-brand-violeta
-        scroll-mt-16
       "
     >
       <div

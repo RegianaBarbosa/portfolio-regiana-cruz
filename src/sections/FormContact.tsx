@@ -71,9 +71,9 @@ export const FormContact: React.FC<FormContactProps> = ({ id }) => {
   return (
     <section
       id={id}
-      className="w-full bg-brand-roxo text-neutral-white py-8 md:pt-28 px-6 md:px-16 lg:px-32"
+      className="w-full bg-brand-roxo text-neutral-white pt-36 pb-8 px-16 lg:px-32"
     >
-      <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 justify-center mx-auto">
+      <div className="flex flex-col lg:flex-row justify-between mx-auto pb-8">
         {/* LADO ESQUERDO: TEXTO E REDES SOCIAIS */}
         <div className="max-w-2xl lg:col-span-5 flex flex-col space-y-6">
           {/* Tag Badge com Seta Turquesa */}
