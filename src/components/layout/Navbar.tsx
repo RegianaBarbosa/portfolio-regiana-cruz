@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Container } from "../shared/Container";
 import logo from "../../assets/brand/logo-rc.png";
 import { Sidebar } from "./Sidebar";
@@ -13,10 +12,10 @@ export interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { href: "#home", text: "Home" },
-  { href: "#projetos", text: "Projetos" },
+  { href: "#home", text: "Home", isPage: false },
+  { href: "#projetos", text: "Projetos", isPage: false },
   { href: "/sobre", text: "Sobre mim", isPage: true },
-  { href: "#form-contato", text: "Contato" },
+  { href: "#form-contato", text: "Contato", isPage: false },
 ];
 
 export const Navbar = () => {
@@ -28,35 +27,13 @@ export const Navbar = () => {
 
   const toggleSidebar = () => setIsSidebarOpen((prev) => !prev);
 
-  // Trata o clique decidindo entre redirecionar página ou fazer scroll suave
-  const handleNavClick = (item: NavItem) => {
-    if (item.isPage) {
-      navigate(item.href);
-      return;
-    }
-
-    if (location.pathname !== "/") {
-      navigate("/", {
-        state: { scrollTo: item.href },
-      });
-      return;
-    }
-
-    handleScrollToSection(item.href);
-  };
-
-  const handleScrollToSection = (id: string) => {
-    if (location.pathname !== "/") {
-      navigate("/");
-      return;
-    }
-
-    const section = document.querySelector(id);
-
+  // Executa o scroll suave compensando a altura do header
+  const scrollToElement = (targetId: string) => {
+    const cleanId = targetId.replace("/", "");
+    const section = document.querySelector(cleanId);
     if (!section) return;
 
     const navbarHeight = document.querySelector("header")?.offsetHeight || 80;
-
     const sectionTop = section.getBoundingClientRect().top + window.scrollY;
 
     window.scrollTo({
@@ -65,24 +42,53 @@ export const Navbar = () => {
     });
   };
 
-  // ScrollSpy ultra-confiável
+  // Gerencia o clique nos itens de menu
+  const handleNavClick = (item: NavItem) => {
+    setIsSidebarOpen(false);
+
+    // 1. Navegação para Página Dedicada (ex: /sobre)
+    if (item.isPage) {
+      navigate(item.href);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    // 2. Navegação para Seções da Home (#projetos, #form-contato, #home)
+    const targetId = item.href.replace("/", ""); // Garante que fique "#secao"
+
+    if (location.pathname !== "/") {
+      // Se estiver em outra página, vai para a Home e depois rola suavemente
+      navigate("/");
+      setTimeout(() => {
+        scrollToElement(targetId);
+      }, 150);
+    } else {
+      // Se já estiver na Home, apenas rola
+      scrollToElement(targetId);
+      setActiveSection(targetId);
+    }
+  };
+
+  // ScrollSpy ativo somente quando estiver na Home ("/")
   useEffect(() => {
     if (location.pathname !== "/") return;
 
     const handleScroll = () => {
       const navbarHeight = document.querySelector("header")?.offsetHeight || 80;
-
       const scrollPosition = window.scrollY + navbarHeight + 150;
 
       const localItems = navItems.filter(
-        (item) => !item.isPage && item.href.startsWith("#"),
+        (item) => !item.isPage && item.href.includes("#"),
       );
 
       const sections = localItems
-        .map((item) => ({
-          href: item.href,
-          el: document.querySelector(item.href) as HTMLElement | null,
-        }))
+        .map((item) => {
+          const targetId = item.href.replace("/", "");
+          return {
+            href: targetId,
+            el: document.querySelector(targetId) as HTMLElement | null,
+          };
+        })
         .filter(
           (item): item is { href: string; el: HTMLElement } => item.el !== null,
         );
@@ -97,10 +103,7 @@ export const Navbar = () => {
       }
     };
 
-    window.addEventListener("scroll", handleScroll, {
-      passive: true,
-    });
-
+    window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
@@ -115,14 +118,14 @@ export const Navbar = () => {
             href="#home"
             onClick={(e) => {
               e.preventDefault();
-              handleScrollToSection("#home");
+              handleNavClick({ href: "#home", text: "Home", isPage: false });
             }}
             className="relative z-20 flex items-center cursor-pointer"
           >
             <img
               src={logo}
               alt="Regiana Cruz Logo"
-              className="w-32 md:w-44 object-contain"
+              className="w-32 md:w-44 lg:w-56 object-contain"
             />
           </a>
 
@@ -139,12 +142,17 @@ export const Navbar = () => {
           <div className="hidden lg:flex justify-center">
             <ul className="flex items-center gap-8">
               {navItems.map((item) => {
+                const targetId = item.href.replace("/", "");
+
+                // 1. Ativo se for a rota da página atual
                 const isCurrentPage =
                   item.isPage && location.pathname === item.href;
+
+                // 2. Ativo se for uma seção na Home e a URL atual for "/"
                 const isCurrentSection =
                   !item.isPage &&
                   location.pathname === "/" &&
-                  activeSection === item.href;
+                  activeSection === targetId;
 
                 const isActive = isCurrentPage || isCurrentSection;
 

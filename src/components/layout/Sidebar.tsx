@@ -1,6 +1,7 @@
 import { X } from "lucide-react";
 import logo from "../../assets/brand/logo-white-rc.png";
 import type { NavItem } from "./Navbar";
+import { useLocation } from "react-router-dom";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -17,6 +18,8 @@ export const Sidebar = ({
   onNavigate,
   activeSection,
 }: SidebarProps) => {
+  const location = useLocation();
+
   return (
     <>
       {/* Backdrop */}
@@ -40,6 +43,7 @@ export const Sidebar = ({
           <div className="flex items-center justify-end">
             <button
               onClick={onClose}
+              aria-label="Fechar menu"
               className="text-neutral-white p-2 rounded-full hover:bg-neutral-white/10 transition-colors cursor-pointer"
             >
               <X className="h-6 w-6" />
@@ -48,14 +52,25 @@ export const Sidebar = ({
 
           {/* Logo */}
           <div className="flex items-center justify-center mt-4 mb-12">
-            <img src={logo} alt="Regiana Cruz" className="h-10 w-auto object-contain" />
+            <img
+              src={logo}
+              alt="Regiana Cruz"
+              className="h-10 w-auto object-contain"
+            />
           </div>
 
           {/* Links do Menu */}
           <nav>
             <ul className="flex flex-col gap-y-4 items-center justify-center">
               {navItems.map((item, index) => {
-                const isActive = !item.isPage && activeSection === item.href;
+                // Checa se é página dedicada ou seção na Home
+                const isCurrentPage =
+                  item.isPage && location.pathname === item.href;
+                const isCurrentSection =
+                  !item.isPage &&
+                  location.pathname === "/" &&
+                  activeSection === item.href;
+                const isActive = isCurrentPage || isCurrentSection;
 
                 return (
                   <li key={index} className="w-full text-center">
