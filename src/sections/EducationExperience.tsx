@@ -13,9 +13,9 @@ export const EducationExperience: React.FC<EducationExperienceProps> = ({
   return (
     <section
       id={id}
-      className="w-full py-16 md:py-24 px-6 md:px-12 lg:px-20 flex justify-center items-center scroll-mt-16"
+      className="w-full flex items-center py-16 md:py-0 px-6 my-32"
     >
-      <div className="w-full flex flex-col gap-32 mx-auto px-6 md:px-16 lg:px-32">
+      <div className="w-full flex flex-col gap-20 mx-auto px-6 md:px-16 lg:px-32">
         {/* CABEÇALHO DA SEÇÃO */}
         <div className="space-y-2">
           {/* Tag com Seta Turquesa */}

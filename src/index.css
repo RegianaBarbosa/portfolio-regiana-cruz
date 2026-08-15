@@ -297,7 +297,6 @@ body {
     border: 1px solid var(--color-neutral-border);
     border-radius: 16px;
     padding: 1.5rem;
-    max-width: 196px;
 
     display: flex;
     flex-direction: column;
