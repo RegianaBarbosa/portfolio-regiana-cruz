@@ -2,6 +2,7 @@ import { ServiceCard } from "../components/shared/ServiceCard";
 import iconUx from "../assets/icons/psychology_violeta.svg";
 import iconUi from "../assets/icons/design_services_violeta.svg";
 import iconCode from "../assets/icons/code_violeta.svg";
+import { ArrowRightBulletIcon } from "../components/shared/ArrowRightBulletIcon";
 
 interface ServicesProps {
   id: string;
@@ -53,7 +54,7 @@ export const Services = ({ id }: ServicesProps) => {
           
           {/* Tag com Seta Turquesa */}
           <div className="flex items-center gap-2 text-brand-turquesa text-body-lg">
-            <span className="text-2xl leading-none">→</span>
+            <ArrowRightBulletIcon/>
             <span>Meus Serviços</span>
           </div>
 

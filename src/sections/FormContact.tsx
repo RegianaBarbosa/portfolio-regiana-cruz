@@ -8,6 +8,7 @@ import {
   AlertCircle,
   Loader2,
 } from "lucide-react";
+import { ArrowRightBulletIcon } from "../components/shared/ArrowRightBulletIcon";
 
 interface FormContactProps {
   id: string;
@@ -78,7 +79,7 @@ export const FormContact: React.FC<FormContactProps> = ({ id }) => {
         <div className="max-w-2xl lg:col-span-5 flex flex-col space-y-6">
           {/* Tag Badge com Seta Turquesa */}
           <div className="flex items-center gap-2 text-brand-turquesa text-body-md font-semibold">
-            <span className="text-xl leading-none">→</span>
+            <ArrowRightBulletIcon/>
             <span>Entre em contato</span>
           </div>
 

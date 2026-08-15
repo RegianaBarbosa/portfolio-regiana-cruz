@@ -1,3 +1,4 @@
+import { ArrowRightBulletIcon } from "../components/shared/ArrowRightBulletIcon";
 import { CheckCircleIcon } from "../components/shared/CheckCircleIcon";
 import { toolsData } from "../data/toolsData";
 
@@ -24,7 +25,7 @@ export const Skills = ({ id }: SkillsProps) => {
         <div className="flex flex-col lg:w-1/2 items-start text-lefT mb-12 space-y-1">
           {/* Tag com Seta Turquesa */}
           <div className="flex items-center gap-2 text-brand-turquesa text-body-lg">
-            <span className="text-2xl leading-none">→</span>
+            <ArrowRightBulletIcon/>
             <span>Ferramentas e Tecnologias</span>
           </div>
 

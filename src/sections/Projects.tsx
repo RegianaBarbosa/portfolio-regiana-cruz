@@ -6,6 +6,7 @@ import {
 import personaTour from "../assets/imgs/persona-tour.png";
 import bilroArte from "../assets/imgs/bilro-arte.png";
 import mesaPosta from "../assets/imgs/a-mesa-esta-posta.png";
+import { ArrowRightBulletIcon } from "../components/shared/ArrowRightBulletIcon";
 // import focusdev from "../assets/imgs/focusdev.png";
 // import devLinks from "../assets/imgs/devlinks.png";
 
@@ -70,7 +71,7 @@ export const Projects = ({ id, onOpenCase }: ProjectsProps) => {
         <div className="flex flex-col items-start w-full mb-12 space-y-2">
           {/* Tag com Seta Turquesa */}
           <div className="flex items-center gap-2 text-brand-turquesa text-body-md font-semibold">
-            <span className="text-xl leading-none">→</span>
+            <ArrowRightBulletIcon/>
             <span>Projetos em destaque</span>
           </div>
 

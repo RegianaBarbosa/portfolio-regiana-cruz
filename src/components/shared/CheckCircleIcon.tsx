@@ -2,9 +2,7 @@ interface CheckCircleIconProps {
   className?: string;
 }
 
-export const CheckCircleIcon = ({
-  className
-}: CheckCircleIconProps) => {
+export const CheckCircleIcon = ({ className }: CheckCircleIconProps) => {
   return (
     <svg
       className={`${className} w-5 h-5 shrink-0`}

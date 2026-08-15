@@ -2,6 +2,7 @@ import React from "react";
 import { experiencesData, educationData } from "../data/careerEducationData";
 import BriefcaseIcon from "../assets/icons/work_branco.svg";
 import AcademicCapIcon from "../assets/icons/school_branco.svg";
+import { ArrowRightBulletIcon } from "../components/shared/ArrowRightBulletIcon";
 
 interface EducationExperienceProps {
   id?: string;
@@ -20,7 +21,7 @@ export const EducationExperience: React.FC<EducationExperienceProps> = ({
         <div className="space-y-2">
           {/* Tag com Seta Turquesa */}
           <div className="flex items-center gap-2 text-brand-turquesa text-body-lg">
-            <span className="text-2xl leading-none">→</span>
+            <ArrowRightBulletIcon/>
             <span>Educação & Carreira</span>
           </div>
 
