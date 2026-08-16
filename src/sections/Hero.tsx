@@ -76,7 +76,7 @@ export const Hero = ({ id }: HeroProps) => {
                   className="w-5 h-5"
                 />
               }
-              href="#contato"
+              href="#form-contato"
               textClassName="text-body-lg"
               className="btn-outline-violeta w-full sm:w-auto"
             />
