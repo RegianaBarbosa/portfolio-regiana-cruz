@@ -35,6 +35,8 @@ body {
   --color-brand-roxo-opacity-90: rgba(48, 7, 142, 0.9);
   --color-brand-roxo-opacity-65: rgba(48, 7, 142, 0.65);
 
+  --color-brand-turquesa-opacity-5: rgba(39, 191, 170, 0.05);
+  --color-brand-turquesa-opacity-15: rgba(39, 191, 170, 0.15);
   --color-brand-turquesa-opacity-20: rgba(39, 191, 170, 0.2);
 
   --color-neutral-white-opacity-70: rgba(255, 255, 255, 0.7);
@@ -156,8 +158,14 @@ body {
     background-color: var(--color-brand-turquesa-medio);
   }
 
+  .bg-brand-turquesa-opacity-5 {
+    background-color: var(--color-brand-turquesa-opacity-5);
+  }
   .bg-brand-turquesa-opacity-15 {
     background-color: var(--color-brand-turquesa-opacity-15);
+  }
+  .bg-brand-turquesa-opacity-20 {
+    background-color: var(--color-brand-turquesa-opacity-20);
   }
   .bg-brand-roxo-opacity-90 {
     background-color: var(--color-brand-roxo-opacity-90);
