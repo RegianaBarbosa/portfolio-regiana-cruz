@@ -1,12 +1,13 @@
-// import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   ProjectCard,
   type ProjectData,
 } from "../components/shared/ProjectCard";
 import personaTour from "../assets/imgs/persona-tour.png";
-import bilroArte from "../assets/imgs/bilro-arte.png";
+import bilroArte from "../assets/imgs/case-bilroarte/bilro-arte.png";
 import mesaPosta from "../assets/imgs/a-mesa-esta-posta.png";
 import { ArrowRightBulletIcon } from "../components/shared/ArrowRightBulletIcon";
+import { SectionHeader } from "./cases/SectionHeader";
 // import focusdev from "../assets/imgs/focusdev.png";
 // import devLinks from "../assets/imgs/devlinks.png";
 
@@ -51,6 +52,17 @@ const projectsData: ProjectData[] = [
 ];
 
 export const Projects = ({ id, onOpenCase }: ProjectsProps) => {
+  const navigate = useNavigate();
+
+  const handleOpenCase = (slug: string) => {
+    if (onOpenCase) {
+      onOpenCase(slug);
+    } else {
+      navigate(`/projeto/${slug}`);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
     <section
       id={id}
@@ -60,29 +72,18 @@ export const Projects = ({ id, onOpenCase }: ProjectsProps) => {
         items-center
         px-6 md:px-16 lg:px-32
         py-24 md:py-32
-        bg-brand-violeta
+        bg-brand-violeta scroll-mt-16
       "
     >
       <div
         className="w-full flex flex-col items-center 
         max-w-6xl"
       >
-        {/* CABEÇALHO */}
-        <div className="flex flex-col items-start w-full mb-12 space-y-2">
-          {/* Tag com Seta Turquesa */}
-          <div className="flex items-center gap-2 text-brand-turquesa text-body-md font-semibold">
-            <ArrowRightBulletIcon/>
-            <span>Projetos em destaque</span>
-          </div>
-
-          {/* Título Principal em Branco */}
-          <h2 className="text-h2 text-neutral-white font-bold tracking-tight">
-            PORTFÓLIO
-          </h2>
-
-          {/* Filtros */}
-          <div></div>
-        </div>
+        <SectionHeader
+          className="w-full items-start mb-12"
+          tag="Projetos em destaque"
+          title="PORTFÓLIO" light
+        />
 
         {/* LISTA DE CARDS DE PROJETOS */}
         <div className="flex flex-col gap-10 md:gap-14 w-full">
@@ -90,7 +91,7 @@ export const Projects = ({ id, onOpenCase }: ProjectsProps) => {
             <ProjectCard
               key={index}
               project={project}
-              onOpenCase={onOpenCase}
+              onOpenCase={handleOpenCase}
             />
           ))}
         </div>

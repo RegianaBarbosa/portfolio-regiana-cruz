@@ -1,6 +1,7 @@
 import { ArrowRightBulletIcon } from "../components/shared/ArrowRightBulletIcon";
 import { CheckCircleIcon } from "../components/shared/CheckCircleIcon";
 import { toolsData } from "../data/toolsData";
+import { SectionHeader } from "./cases/SectionHeader";
 
 const toolGroups = [
   "UX/UI Design",
@@ -13,44 +14,32 @@ interface SkillsProps {
 }
 
 export const Skills = ({ id }: SkillsProps) => {
-  
-
   return (
     <section
       id={id}
       className="w-full flex items-center py-16 md:py-0 px-6 my-32"
     >
       <div className="w-full flex flex-col lg:flex-row lg:gap-32 mx-auto px-6 md:px-16 lg:px-32">
-        {/* CABEÇALHO DA SEÇÃO (ALINHADO À ESQUERDA) */}
-        <div className="flex flex-col lg:w-1/2 items-start text-lefT mb-12 space-y-1">
-          {/* Tag com Seta Turquesa */}
-          <div className="flex items-center gap-2 text-brand-turquesa text-body-lg">
-            <ArrowRightBulletIcon/>
-            <span>Ferramentas e Tecnologias</span>
-          </div>
-
-          {/* Título Principal Violeta */}
-          <h2 className="text-h2 text-brand-violeta font-bold tracking-tight">
-            As habilidades por trás dos meus projetos
-          </h2>
-
-          {/* Subtítulo */}
-          <p className="mt-4 lg:mt-6 text-h4 text-neutral-black leading-relaxed tracking-wide">
-            A combinação de ferramentas e tecnologias que impulsionam minhas
-            entregas do protótipo ao código.
-          </p>
-
-          <ul className="my-12 space-y-4">
-            {toolGroups.map((item, index) => (
-              <li key={index} className="flex items-start gap-3">
-                <CheckCircleIcon className="w-5 h-5 text-brand-turquesa" />
-                <p className="text-body-lg text-neutral-black leading-relaxed">
-                  {item}
-                </p>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <SectionHeader
+          className="mb-12"
+          tag="Ferramentas e Tecnologias"
+          title="As habilidades por trás dos meus projetos"
+          description="A combinação de ferramentas e tecnologias que impulsionam minhas
+            entregas do protótipo ao código."
+          descriptionClassName="mt-6 lg:mt-6 tracking-wide"
+          children={
+            <ul className="my-12 space-y-4">
+              {toolGroups.map((item, index) => (
+                <li key={index} className="flex items-start gap-3">
+                  <CheckCircleIcon className="w-5 h-5 text-brand-turquesa" />
+                  <p className="text-body-lg text-neutral-black leading-relaxed">
+                    {item}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          }
+        />
 
         {/* GRID DAS FERRAMENTAS */}
 

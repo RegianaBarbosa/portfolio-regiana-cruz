@@ -98,7 +98,7 @@ export const About = ({ id }: AboutProps) => {
             {aboutImgsData.map((img) => (
               <div
                 key={img.id}
-                className={`absolute rounded-full overflow-hidden shadow-custom transition-all duration-300 ease-out hover:scale-115 hover:z-30 hover:shadow-2xl cursor-pointer ${img.className}`}
+                className={`absolute rounded-full overflow-hidden shadow-custom transition-all duration-300 ease-out hover:scale-115 hover:z-30 hover:shadow-2xl ${img.className}`}
               >
                 <img
                   src={img.src}
