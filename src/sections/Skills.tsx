@@ -43,7 +43,7 @@ export const Skills = ({ id }: SkillsProps) => {
           <ul className="my-12 space-y-4">
             {toolGroups.map((item, index) => (
               <li key={index} className="flex items-start gap-3">
-                <CheckCircleIcon className="text-brand-turquesa" />
+                <CheckCircleIcon className="w-5 h-5 text-brand-turquesa" />
                 <p className="text-body-lg text-neutral-black leading-relaxed">
                   {item}
                 </p>

@@ -39,7 +39,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
         <ul className="space-y-4">
           {items.map((item, index) => (
             <li key={index} className="flex items-start gap-3">
-              <CheckCircleIcon className="text-brand-turquesa"/>
+              <CheckCircleIcon className="w-5 h-5 text-brand-turquesa"/>
               <p className="text-body-sm text-neutral-gray-dark leading-relaxed">
                 {item}
               </p>

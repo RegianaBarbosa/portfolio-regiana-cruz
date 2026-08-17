@@ -5,7 +5,7 @@ interface CheckCircleIconProps {
 export const CheckCircleIcon = ({ className }: CheckCircleIconProps) => {
   return (
     <svg
-      className={`${className} w-5 h-5 shrink-0`}
+      className={`${className} shrink-0`}
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
