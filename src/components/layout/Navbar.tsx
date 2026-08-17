@@ -125,7 +125,7 @@ export const Navbar = () => {
             <img
               src={logo}
               alt="Regiana Cruz Logo"
-              className="w-32 md:w-44 lg:w-56 object-contain"
+              className="w-32 md:w-48 object-contain"
             />
           </a>
 
@@ -154,7 +154,12 @@ export const Navbar = () => {
                   location.pathname === "/" &&
                   activeSection === targetId;
 
-                const isActive = isCurrentPage || isCurrentSection;
+                // 3. Ativo se o item for "Projetos" e a rota atual for um case (/projeto/:slug)
+                const isProjectDetailRoute =
+                  (targetId === "projetos" || item.href.includes("projetos")) &&
+                  location.pathname.startsWith("/projeto");
+
+                const isActive = isCurrentPage || isCurrentSection || isProjectDetailRoute;
 
                 return (
                   <li key={item.href}>
