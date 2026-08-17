@@ -2,7 +2,7 @@ import React from "react";
 import { experiencesData, educationData } from "../data/careerEducationData";
 import BriefcaseIcon from "../assets/icons/work_branco.svg";
 import AcademicCapIcon from "../assets/icons/school_branco.svg";
-import { ArrowRightBulletIcon } from "../components/shared/ArrowRightBulletIcon";
+import { SectionHeader } from "./cases/SectionHeader";
 
 interface EducationExperienceProps {
   id?: string;
@@ -17,19 +17,10 @@ export const EducationExperience: React.FC<EducationExperienceProps> = ({
       className="w-full flex items-center py-16 md:py-0 px-6 my-32"
     >
       <div className="w-full flex flex-col gap-20 mx-auto px-6 md:px-16 lg:px-32">
-        {/* CABEÇALHO DA SEÇÃO */}
-        <div className="space-y-2">
-          {/* Tag com Seta Turquesa */}
-          <div className="flex items-center gap-2 text-brand-turquesa text-body-lg">
-            <ArrowRightBulletIcon/>
-            <span>Educação & Carreira</span>
-          </div>
-
-          {/* Título Principal Violeta */}
-          <h2 className="text-h2 text-brand-violeta font-bold tracking-tight">
-            Minha jornada acadêmica e profissional
-          </h2>
-        </div>
+        <SectionHeader
+          tag="Educação & Carreira"
+          title="Minha jornada acadêmica e profissional"
+        />
 
         {/* GRID DE CARDS LADO A LADO */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full items-stretch">

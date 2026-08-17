@@ -74,11 +74,11 @@ export const FormContact: React.FC<FormContactProps> = ({ id }) => {
       id={id}
       className="w-full bg-brand-roxo text-neutral-white pt-36 pb-8 px-16 lg:px-32"
     >
-      <div className="flex flex-col lg:flex-row justify-between mx-auto pb-8">
+      <div className="flex flex-col lg:flex-row justify-center gap-16 md:gap-24 lg:gap-32 pb-8">
         {/* LADO ESQUERDO: TEXTO E REDES SOCIAIS */}
-        <div className="max-w-2xl lg:col-span-5 flex flex-col space-y-6">
+        <div className="w-full max-w-2xl lg:col-span-5 flex flex-col space-y-6">
           {/* Tag Badge com Seta Turquesa */}
-          <div className="flex items-center gap-2 text-brand-turquesa text-body-md font-semibold">
+          <div className="flex items-center gap-2 text-brand-turquesa text-body-lg">
             <ArrowRightBulletIcon/>
             <span>Entre em contato</span>
           </div>

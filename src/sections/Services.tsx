@@ -3,6 +3,7 @@ import iconUx from "../assets/icons/psychology_violeta.svg";
 import iconUi from "../assets/icons/design_services_violeta.svg";
 import iconCode from "../assets/icons/code_violeta.svg";
 import { ArrowRightBulletIcon } from "../components/shared/ArrowRightBulletIcon";
+import { SectionHeader } from "./cases/SectionHeader";
 
 interface ServicesProps {
   id: string;
@@ -49,20 +50,7 @@ export const Services = ({ id }: ServicesProps) => {
     >
       <div className="w-full mx-auto px-6 md:px-16 lg:px-32">
         
-        {/* CABEÇALHO DA SEÇÃO (ALINHADO À ESQUERDA) */}
-        <div className="flex flex-col items-start text-lefT mb-12 space-y-1">
-          
-          {/* Tag com Seta Turquesa */}
-          <div className="flex items-center gap-2 text-brand-turquesa text-body-lg">
-            <ArrowRightBulletIcon/>
-            <span>Meus Serviços</span>
-          </div>
-
-          {/* Título Principal Violeta */}
-          <h2 className="text-h2 text-brand-violeta font-bold tracking-tight">
-            O que posso lhe oferecer
-          </h2>
-        </div>
+        <SectionHeader className="mb-12" tag="Meus Serviços" title="O que posso lhe oferecer" />
 
         {/* GRID DOS CARDS DE SERVIÇOS */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -75,7 +63,6 @@ export const Services = ({ id }: ServicesProps) => {
             />
           ))}
         </div>
-
       </div>
     </section>
   );
