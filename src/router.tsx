@@ -6,7 +6,7 @@ import ProjectPage from "./pages/ProjectPage";
 
 export function Router() {
   return (
-    <BrowserRouter basename="/portfolio-regiana-cruz">
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/sobre" element={<AboutPage />} />
