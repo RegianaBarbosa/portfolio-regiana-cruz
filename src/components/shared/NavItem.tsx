@@ -10,7 +10,7 @@ export const NavItem = ({ href, text, onClick, className }: NavItemProps) => {
     <li>
       <a
         href={href}
-        className={`transform transition duration-300 hover-color-secondary ${className} active:color-primary`}
+        className={`transform transition duration-300 hover:text-brand-roxo ${className} active:text-neutral-white`}
         onClick={onClick}
       >
         {text}

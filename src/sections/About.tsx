@@ -1,4 +1,4 @@
-import aboutPhotos from "../assets/imgs/about_imgs.png";
+import { aboutImgsData } from "../data/aboutImgs";
 
 interface AboutProps {
   id: string;
@@ -8,66 +8,105 @@ export const About = ({ id }: AboutProps) => {
   return (
     <section
       id={id}
-      className="relative w-full flex justify-center items-center px-2 min-h-160"
+      className="w-full flex items-center justify-center min-h-screen py-24 lg:py-32 scroll-mt-16"
     >
-      {/* Card */}
-      <div className="flex bg-primary rounded-4xl shadow-custom w-full max-w-6xl">
-        {/* Conteúdo */}
-        <div className="flex flex-col lg:flex-row gap-10 py-6 px-8">
-          {/* Texto */}
-          <div className="flex flex-col gap-6 lg:w-1/2">
-            <h3 className="text-h-3 font-semibold color-white">Sobre mim</h3>
+      <div className="flex flex-col lg:flex-row w-full items-start justify-between md:px-8 lg:px-32 xl:px-48 gap-10 md:gap-20 mx-auto">
+        {/* LADO DIREITO: TEXTO E MÉTRICAS */}
+        <div className="w-full lg:max-w-7xl flex flex-col items-start text-left px-6 lg:px-0">
+          {/* Tag Badge */}
+          <span className="inline-block text-brand-lilas text-body-md font-semibold px-4 py-1.5 rounded-full border border-brand-lilas">
+            Sobre mim
+          </span>
 
-            <p className="text-body color-white font-light text-justify">
-              Sou graduanda em{" "}
-              <span className="font-semibold">Sistemas de Informação</span> no
-              IFMA e mestranda em
-              <span className="font-semibold"> Engenharia Informática</span> no
-              ISEP/IPP, trajetória iniciada após minha experiência acadêmica em
-              Porto, Portugal, durante o Programa de Dupla Diplomação em 2023.
-              <br />
-              <br />
-              Minha experiência em{" "}
-              <span className="font-semibold">UX/UI Designer</span> começou em
-              2022 com o projeto "Bilro Arte", da Fábrica de Inovação do IFMA,
-              um <span className="font-semibold">aplicativo de e-commerce</span>{" "}
-              voltado para as artesãs de Raposa-MA. Também atuei no "Persona
-              Tour",
-              <span className="font-semibold">
-                {" "}
-                aplicativo inclusivo de turismo
-              </span>{" "}
-              para pessoas com deficiência e idosos.
-              <br />
-              <br />
-              Em 2025, iniciei meu estágio como{" "}
-              <span className="font-semibold">Desenvolvedora Front-end</span> na
-              Starblink (Grupo Lençóis Tecnologia) e também passei a integrar o
-              Ilha Games Studio, empresa especializada em jogos educacionais e
-              gamificação offline, como{" "}
-              <span className="font-semibold">designer</span>. Essa soma de
-              experiências tem guiado minha jornada como{" "}
-              <span className="font-semibold">
-                Front-end Developer e UX/UI Designer
-              </span>
-              .
-              <br />
-              <br />
-              <span className="italic">
-                Busco criar experiências claras, acessíveis e eficientes, sempre
-                baseada em entendimento real do usuário, validação contínua e
-                foco em resolver problemas que geram impacto concreto.
-              </span>
+          <h2 className="mt-4 mb-12 text-h1 font-semibold text-brand-lilas leading-tight">
+            Regiana
+            <span className="text-brand-turquesa"> Cruz</span>
+          </h2>
+
+          {/* Texto Biográfico idêntico ao protótipo PDF */}
+          <div className="space-y-4 text-body-lg text-neutral-black tracking-wide text-justify">
+            <p className="leading-normal">
+              Sou formada em{" "}
+              <span className="font-bold">Sistemas de Informação</span> pelo
+              IFMA (Campus Monte Castelo) e mestranda em{" "}
+              <span className="font-bold">Engenharia de Software</span> pelo
+              ISEP, em Portugal, através do Programa de Dupla Diplomação.
+            </p>
+
+            <p>
+              Atuo como <span className="font-bold">UX/UI Designer</span> e{" "}
+              <span className="font-bold">Desenvolvedora Front-end</span>,
+              transformando problemas complexos em interfaces simples,
+              acessíveis e orientadas ao usuário na interseção entre pesquisa,
+              design e implementação. Conduzo o processo de UX de ponta a ponta:
+              do <span className="italic">discovery</span>, arquitetura da
+              informação e wireframes até a prototipação de alta fidelidade e
+              testes de usabilidade.
+            </p>
+
+            <p>
+              Se a sua empresa precisa de alguém que não apenas desenhe telas
+              bonitas, mas entenda a lógica por trás do código, coloque a
+              experiência do usuário no centro de tudo e lidere o processo de
+              design com organização, a gente vai se dar muito bem.
+            </p>
+
+            <p>
+              Estou pronta para transformar desafios de produto em entregas de
+              alto impacto, garantindo menos retrabalho, mais viabilidade
+              técnica e produtos que as pessoas realmente gostem de usar.
             </p>
           </div>
 
-          {/* Imagem */}
-          <div className="flex justify-center items-center lg:w-1/2">
-            <img
-              src={aboutPhotos}
-              alt=""
-              className="w-full max-w-xs md:max-w-sm object-contain"
-            />
+          {/* CARDS DE MÉTRICAS */}
+          <div className="flex  gap-6 pt-16">
+            {/* Card 1 */}
+            <div className="experience-metric-card">
+              <h1 className="text-h2 md:text-h1 text-neutral-white leading-none mb-2">
+                4
+              </h1>
+              <p className="text-body-sm font-medium text-neutral-off-white leading-snug">
+                Anos de experiência
+              </p>
+            </div>
+
+            {/* Card 2 */}
+            <div className="experience-metric-card">
+              <h1 className="text-h2 md:text-h1 text-neutral-white leading-none mb-2">
+                15+
+              </h1>
+              <p className="text-body-sm font-medium text-neutral-off-white leading-snug">
+                Projetos entregues
+              </p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="experience-metric-card">
+              <h1 className="text-h2 md:text-h1 text-neutral-white leading-none mb-2">
+                1
+              </h1>
+              <p className="text-body-sm font-medium text-neutral-off-white leading-snug">
+                Case completo
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* IMAGENS CIRCULARES INTERATIVAS */}
+        <div className="w-full lg:w-1/2 flex justify-center items-center">
+          <div className="relative w-full max-w-[360px] sm:max-w-[420px] md:max-w-[480px] h-[480px] sm:h-[540px] md:h-[580px]">
+            {aboutImgsData.map((img) => (
+              <div
+                key={img.id}
+                className={`absolute rounded-full overflow-hidden shadow-custom transition-all duration-300 ease-out hover:scale-115 hover:z-30 hover:shadow-2xl ${img.className}`}
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>

@@ -1,11 +1,8 @@
 import { Layout } from "./components/Layout";
 import { Hero } from "./sections/Hero";
-import { About } from "./sections/About";
-import { Tools } from "./sections/Tools";
-import { Experience } from "./sections/Experience";
 import { Projects } from "./sections/Projects";
-import { Education } from "./sections/Education";
-// import { Contact } from "./sections/Contact";
+import { Services } from "./sections/Services";
+import { FormContact } from "./sections/FormContact";
 
 function App() {
   // useEffect(() => {
@@ -17,12 +14,9 @@ function App() {
       {" "}
       <Layout title="Regiana Cruz | Portfolio">
         <Hero id="home" />
-        <About id="sobre-mim" />
-        <Experience id="experiencias" />
-        <Tools id="ferramentas" />
+        <Services id="servicos" />
         <Projects id="projetos" />
-        <Education id="formacao" />
-        {/* <Contact id="contato"/>  */}
+        <FormContact id="form-contato"/> 
       </Layout>
     </>
   );

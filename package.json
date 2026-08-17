@@ -2,7 +2,7 @@
   "homepage": "https://regianabarbosa.github.io/portfolio-regiana-cruz/",
   "name": "portfolio-regiana-cruz",
   "private": true,
-  "version": "0.1.0",
+  "version": "2.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -20,7 +20,8 @@
     "postcss": "^8.5.4",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "react-loading-indicators": "^1.0.1"
+    "react-loading-indicators": "^1.0.1",
+    "react-router-dom": "^7.18.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

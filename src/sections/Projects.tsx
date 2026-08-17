@@ -1,54 +1,56 @@
-import { ProjectCard } from "../components/shared/ProjectCard";
-import focusdev from "../assets/imgs/focusdev.png";
-import mesaPosta from "../assets/imgs/a-mesa-esta-posta.png";
-import devLinks from "../assets/imgs/devlinks.png";
+import { useNavigate } from "react-router-dom";
+import {
+  ProjectCard,
+  type ProjectData,
+} from "../components/shared/ProjectCard";
 import personaTour from "../assets/imgs/persona-tour.png";
-import bilroArte from "../assets/imgs/bilro-arte.png";
+import bilroArte from "../assets/imgs/case-bilroarte/bilro-arte.png";
+import mesaPosta from "../assets/imgs/a-mesa-esta-posta.png";
+import { SectionHeader } from "../components/shared/SectionHeader";
+import focusdev from "../assets/imgs/focusdev.png";
+import devLinks from "../assets/imgs/devlinks.png";
 
 interface ProjectsProps {
   id: string;
+  onOpenCase?: (slug: string) => void;
 }
 
-// 🔹 Lista de projetos (sem position)
-const projectsData = [
+// Lista oficial de projetos em destaque
+const projectsData: ProjectData[] = [
+  {
+    title: "Bilro Arte",
+    subtitle: "Aplicativo para gestão de e-commerce",
+    tags: ["E-COMMERCE", "UX RESEARCH", "TESTE DE USABILIDADE"],
+    image: bilroArte,
+    description:
+      "Aplicativo mobile projetado para ajudar rendeiras com baixa familiaridade digital a vender e gerenciar seus produtos com autonomia, por meio de uma interface simples, intuitiva e orientada por testes de usabilidade.",
+    caseSlug: "bilro-arte",
+    position: "left",
+  },
   {
     title: "PersonaTour",
     subtitle: "Aplicativo de turismo acessível",
-    tags: ["Figma", "Wireframes", "Sketches"],
-    date: "Abr. 25",
+    tags: ["TURISMO ACESSÍVEL", "UX/UI DESIGN", "ACESSABILIDADE"],
     image: personaTour,
     description:
-      "Aplicativo voltado para turismo acessível. Atuei em UX, prototipação e validação.",
-    repoLink: "",
-    demoLink: "",
-  },
-  {
-    title: "BilroArte",
-    subtitle: "Aplicativo para gestão de e-commerce",
-    tags: ["Wireframes", "Pesquisa UX", "Prototipação"],
-    date: "Nov. 24",
-    image: bilroArte,
-    description:
-      "Plataforma de e-commerce para Renda de Bilro. Desenvolvi fluxos, protótipos e testes.",
-    repoLink: "",
-    demoLink: "",
+      "Aplicativo de recomendação de pontos turísticos personalizado para o público idoso e PwD, focado em acessibilidade, preferências do usuário e facilidade de uso em dispositivos móveis.",
+    caseSlug: "persona-tour",
+    position: "right",
   },
   {
     title: "A Mesa Está Posta",
     subtitle: "Site informativo da I Feira Bíblica",
-    tags: ["HTML", "CSS", "Web"],
-    date: "Out. 23",
+    tags: ["HTML", "CSS", "WEB RESPONSIVO"],
     image: mesaPosta,
     description:
-      "Site informativo criado para a Feira Bíblica, com layout responsivo.",
+      "Site informativo criado para a Feira Bíblica, com layout responsivo e estrutura otimizada para consulta em dispositivos móveis.",
     repoLink: "https://github.com/RegianaBarbosa/a-mesa-esta-posta",
     demoLink: "https://a-mesa-esta-posta.vercel.app/",
-  },
-  {
+    position: "left",
+  },  {
     title: "FocusDev",
     subtitle: "Interface de Login",
     tags: ["HTML", "CSS", "JavaScript"],
-    date: "Mai. 25",
     image: focusdev,
     description:
       "Tela de login responsiva desenvolvida como prática de UI e responsividade.",
@@ -59,7 +61,6 @@ const projectsData = [
     title: "DevLinks",
     subtitle: "Página de links pessoais",
     tags: ["HTML", "CSS", "JavaScript"],
-    date: "Abr. 25",
     image: devLinks,
     description:
       "Projeto do Discover/Rocketseat com tema dinâmico e responsividade.",
@@ -68,51 +69,51 @@ const projectsData = [
   },
 ];
 
-export const Projects = ({ id }: ProjectsProps) => {
+export const Projects = ({ id, onOpenCase }: ProjectsProps) => {
+  const navigate = useNavigate();
+
+  const handleOpenCase = (slug: string) => {
+    if (onOpenCase) {
+      onOpenCase(slug);
+    } else {
+      navigate(`/projeto/${slug}`);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
     <section
       id={id}
       className="
         w-full 
         flex flex-col 
-        items-center 
-        px-6 
-        py-20 
-        md:py-28
+        items-center
+        px-6 md:px-16 lg:px-32
+        py-24 md:py-32
+        bg-brand-violeta scroll-mt-16
       "
     >
-      {/* TÍTULO */}
-      <h3 className="text-h-3 color-primary font-semibold mb-14 md:mb-20">
-        Projetos Recentes
-      </h3>
-
-      {/* LISTA DE CARDS */}
       <div
-        className="
-          flex 
-          flex-col 
-          items-center 
-          gap-14 
-          md:gap-20
-          w-full
-          max-w-3xl      /* limita largura no mobile e md */
-          lg:max-w-5xl   /* aumenta no desktop */
-        "
+        className="w-full flex flex-col items-center 
+        max-w-6xl"
       >
-        {projectsData.map((project, index) => (
-          <ProjectCard
-            key={index}
-            title={project.title}
-            subtitle={project.subtitle}
-            tags={project.tags}
-            date={project.date}
-            image={project.image}
-            description={project.description}
-            position={index % 2 === 0 ? "right" : "left"} // alternância apenas no desktop
-            repoLink={project.repoLink}
-            demoLink={project.demoLink}
-          />
-        ))}
+        <SectionHeader
+          className="w-full items-start mb-12"
+          tag="Projetos em destaque"
+          title="PORTFÓLIO"
+          light
+        />
+
+        {/* LISTA DE CARDS DE PROJETOS */}
+        <div className="flex flex-col gap-10 md:gap-14 w-full">
+          {projectsData.map((project, index) => (
+            <ProjectCard
+              key={index}
+              project={project}
+              onOpenCase={handleOpenCase}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

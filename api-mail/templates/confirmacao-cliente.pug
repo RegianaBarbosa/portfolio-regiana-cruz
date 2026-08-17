@@ -1,0 +1,50 @@
+doctype html
+html(lang="pt-BR")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Mensagem recebida!
+    style.
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap');
+      body { margin: 0; padding: 0; background-color: #F8F7F4; font-family: 'Inter', Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+      .container { width: 100%; table-layout: fixed; background-color: #F8F7F4; padding: 40px 12px; }
+      .card { max-width: 580px; margin: 0 auto; background-color: #FFFFFF; border-radius: 24px; border: 1px solid #E5E7EB; overflow: hidden; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04); }
+      
+      /* CABEÇALHO COMPATÍVEL COM GMAIL / OUTLOOK */
+      .header { background-color: #4A10D1;  }
+      .header img {
+        max-width: 80%;
+        height: auto;
+        display: inline-block;
+        margin: 0 auto;
+        border: 0;
+      }
+
+      .content { padding: 40px 36px; text-align: left; }
+      .greeting { font-family: 'Poppins', Arial, sans-serif; font-size: 24px; font-weight: 600; color: #4a10d1; margin-top: 0; margin-bottom: 16px; }
+      .text { font-size: 15px; color: #444444; line-height: 1.6; margin-bottom: 16px; }
+      .footer { background-color: #FAFAFA; border-top: 1px solid #E5E7EB; padding: 20px 36px; text-align: center; font-size: 12px; color: #9CA3AF; }
+
+  body
+    .container
+      .card
+        .header(style="padding: 32px; text-align: center;")
+          table(role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0")
+            tr
+              td(align="center")
+                img(
+                  src="cid:logoWhite"
+                  alt="Regiana Cruz"
+                  width="250"
+                  style="display:block;border:0;outline:none;text-decoration:none;"
+                )
+        
+        .content
+          h1.greeting Olá, #{nome}! 👋
+          
+          p.text Recebi sua mensagem com sucesso através do meu portfólio. Muito obrigada por entrar em contato!
+          
+          p.text Já estou analisando as informações que enviou e retornarei em breve.
+        
+        .footer
+          p Este é um e-mail automático de confirmação de recebimento.

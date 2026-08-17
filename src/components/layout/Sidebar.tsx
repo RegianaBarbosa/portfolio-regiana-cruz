@@ -1,16 +1,13 @@
-import { BtnLink } from "../shared/BtnLink";
-// import { BtnIcon } from "../shared/BtnIcon";
 import { X } from "lucide-react";
 import logo from "../../assets/brand/logo-white-rc.png";
-import { SideBarItem } from "../shared/SidebarItem";
+import type { NavItem } from "./Navbar";
+import { useLocation } from "react-router-dom";
 
 interface SidebarProps {
   isOpen: boolean;
   onClose: () => void;
-  navItems: { href: string; text: string }[];
-  instagramIconSrc: string;
-  whatsappIconSrc: string;
-  onNavigate: (id: string) => void;
+  navItems: NavItem[];
+  onNavigate: (item: NavItem) => void;
   activeSection: string;
 }
 
@@ -19,58 +16,83 @@ export const Sidebar = ({
   onClose,
   navItems,
   onNavigate,
+  activeSection,
 }: SidebarProps) => {
+  const location = useLocation();
+
   return (
     <>
+      {/* Backdrop */}
       {isOpen && (
-        <div className="fixed inset-0 z-40 lg:hidden" onClick={onClose}></div>
+        <div
+          className="fixed inset-0 z-40 bg-neutral-black/40 backdrop-blur-xs lg:hidden"
+          onClick={onClose}
+        ></div>
       )}
 
+      {/* Painel da Sidebar */}
       <div
         className={`
-          fixed inset-y-0 right-0 z-50 w-64 md:w-80 bg-primary transition-transform 
-          duration-300 ease-out shadow-xl flex flex-col
+          fixed inset-y-0 right-0 z-50 w-72 md:w-80 bg-brand-violeta transition-transform 
+          duration-300 ease-out shadow-2xl flex flex-col justify-between p-6
           ${isOpen ? "translate-x-0" : "translate-x-full"}
           lg:hidden`}
       >
-        {/* Sidebar principal */}
-        <div className="flex items-center justify-end p-4">
-          <button onClick={onClose} className="color-white p-2 rounded-ful">
-            <X className="h-6 w-6" />
-          </button>
-        </div>
-        <div className="flex items-center justify-center mt-6">
-          <img src={logo} alt="Logo" className="w-56 h-10 object-cover" />
-        </div>
-        <nav className="flex flex-col my-16">
-          <ul className="flex flex-col gap-y-4 items-center justify-center">
-            {navItems.map((item, key) => (
-              <SideBarItem
-                href={item.href}
-                text={item.text}
-                key={key}
-                className="text-h-5 color-white"
-                onClick={() => {
-                  onNavigate(item.href);
-                  onClose();
-                }}
-              />
-            ))}
-          </ul>
+        <div>
+          {/* Botão Fechar */}
+          <div className="flex items-center justify-end">
+            <button
+              onClick={onClose}
+              aria-label="Fechar menu"
+              className="text-neutral-white p-2 rounded-full hover:bg-neutral-white/10 transition-colors cursor-pointer"
+            >
+              <X className="h-6 w-6" />
+            </button>
+          </div>
 
-          {/* Botões "Fale Conosco" e Redes Sociais */}
-          <div className="flex flex-col gap-y-4 mt-16 items-center justify-center">
-            <BtnLink
-              text="Vamos conversar?"
-              href="#contact"
-              onClick={() => {
-                onNavigate("#contact");
-                onClose();
-              }}
-              className="text-h-5 bg-white color-primary px-8 py-2"
+          {/* Logo */}
+          <div className="flex items-center justify-center mt-4 mb-12">
+            <img
+              src={logo}
+              alt="Regiana Cruz"
+              className="h-10 w-auto object-contain"
             />
           </div>
-        </nav>
+
+          {/* Links do Menu */}
+          <nav>
+            <ul className="flex flex-col gap-y-4 items-center justify-center">
+              {navItems.map((item, index) => {
+                // Checa se é página dedicada ou seção na Home
+                const isCurrentPage =
+                  item.isPage && location.pathname === item.href;
+                const isCurrentSection =
+                  !item.isPage &&
+                  location.pathname === "/" &&
+                  activeSection === item.href;
+                const isActive = isCurrentPage || isCurrentSection;
+
+                return (
+                  <li key={index} className="w-full text-center">
+                    <button
+                      onClick={() => onNavigate(item)}
+                      className={`
+                        w-full py-3 px-6 text-body-md font-medium rounded-full transition-all cursor-pointer
+                        ${
+                          isActive
+                            ? "bg-neutral-white text-brand-violeta font-bold shadow-md"
+                            : "text-neutral-white hover:bg-neutral-white/15"
+                        }
+                      `}
+                    >
+                      {item.text}
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+        </div>
       </div>
     </>
   );
