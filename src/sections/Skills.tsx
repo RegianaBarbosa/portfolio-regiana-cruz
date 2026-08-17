@@ -1,6 +1,6 @@
 import { CheckCircleIcon } from "../components/shared/CheckCircleIcon";
 import { toolsData } from "../data/toolsData";
-import { SectionHeader } from "./cases/SectionHeader";
+import { SectionHeader } from "../components/shared/SectionHeader";
 
 const toolGroups = [
   "UX/UI Design",

@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowRightBulletIcon } from "../../components/shared/ArrowRightBulletIcon";
+import { ArrowRightBulletIcon } from "./ArrowRightBulletIcon";
 
 export interface SectionHeaderProps {
   tag?: string;

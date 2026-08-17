@@ -6,7 +6,7 @@ import {
 import personaTour from "../assets/imgs/persona-tour.png";
 import bilroArte from "../assets/imgs/case-bilroarte/bilro-arte.png";
 import mesaPosta from "../assets/imgs/a-mesa-esta-posta.png";
-import { SectionHeader } from "./cases/SectionHeader";
+import { SectionHeader } from "../components/shared/SectionHeader";
 // import focusdev from "../assets/imgs/focusdev.png";
 // import devLinks from "../assets/imgs/devlinks.png";
 
@@ -81,7 +81,8 @@ export const Projects = ({ id, onOpenCase }: ProjectsProps) => {
         <SectionHeader
           className="w-full items-start mb-12"
           tag="Projetos em destaque"
-          title="PORTFÓLIO" light
+          title="PORTFÓLIO"
+          light
         />
 
         {/* LISTA DE CARDS DE PROJETOS */}

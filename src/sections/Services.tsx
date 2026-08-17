@@ -3,7 +3,7 @@ import iconUx from "../assets/icons/psychology_violeta.svg";
 import iconUi from "../assets/icons/design_services_violeta.svg";
 import iconCode from "../assets/icons/code_violeta.svg";
 import { ArrowRightBulletIcon } from "../components/shared/ArrowRightBulletIcon";
-import { SectionHeader } from "./cases/SectionHeader";
+import { SectionHeader } from "../components/shared/SectionHeader";
 
 interface ServicesProps {
   id: string;
@@ -49,8 +49,11 @@ export const Services = ({ id }: ServicesProps) => {
       className="w-full py-16 md:py-24 flex flex-col items-center justify-center scroll-mt-16"
     >
       <div className="w-full mx-auto px-6 md:px-16 lg:px-32">
-        
-        <SectionHeader className="mb-12" tag="Meus Serviços" title="O que posso lhe oferecer" />
+        <SectionHeader
+          className="mb-12"
+          tag="Meus Serviços"
+          title="O que posso lhe oferecer"
+        />
 
         {/* GRID DOS CARDS DE SERVIÇOS */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">

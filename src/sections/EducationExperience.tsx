@@ -2,7 +2,7 @@ import React from "react";
 import { experiencesData, educationData } from "../data/careerEducationData";
 import BriefcaseIcon from "../assets/icons/work_branco.svg";
 import AcademicCapIcon from "../assets/icons/school_branco.svg";
-import { SectionHeader } from "./cases/SectionHeader";
+import { SectionHeader } from "../components/shared/SectionHeader";
 
 interface EducationExperienceProps {
   id?: string;
