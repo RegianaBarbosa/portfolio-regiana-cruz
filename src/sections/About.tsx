@@ -8,11 +8,11 @@ export const About = ({ id }: AboutProps) => {
   return (
     <section
       id={id}
-      className="w-full flex items-center justify-center min-h-screen py-16 md:py-24 lg:py-32 scroll-mt-16"
+      className="w-full flex items-center justify-center min-h-screen py-24 lg:py-32 scroll-mt-16"
     >
-      <div className="flex flex-col-reverse lg:flex-row w-full items-start justify-between px-6 md:px-8 lg:px-32 xl:px-48 gap-10 md:gap-20 mx-auto">
+      <div className="flex flex-col lg:flex-row w-full items-start justify-between md:px-8 lg:px-32 xl:px-48 gap-10 md:gap-20 mx-auto">
         {/* LADO DIREITO: TEXTO E MÉTRICAS */}
-        <div className="w-full lg:max-w-7xl flex flex-col items-start text-left px-16 lg:px-0">
+        <div className="w-full lg:max-w-7xl flex flex-col items-start text-left px-6 lg:px-0">
           {/* Tag Badge */}
           <span className="inline-block text-brand-lilas text-body-md font-semibold px-4 py-1.5 rounded-full border border-brand-lilas">
             Sobre mim
@@ -59,7 +59,7 @@ export const About = ({ id }: AboutProps) => {
           </div>
 
           {/* CARDS DE MÉTRICAS */}
-          <div className="grid grid-cols-1 sm:grid-cols-3  gap-6 pt-16">
+          <div className="flex  gap-6 pt-16">
             {/* Card 1 */}
             <div className="experience-metric-card">
               <h1 className="text-h2 md:text-h1 text-neutral-white leading-none mb-2">

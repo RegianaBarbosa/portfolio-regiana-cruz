@@ -7,8 +7,8 @@ import personaTour from "../assets/imgs/persona-tour.png";
 import bilroArte from "../assets/imgs/case-bilroarte/bilro-arte.png";
 import mesaPosta from "../assets/imgs/a-mesa-esta-posta.png";
 import { SectionHeader } from "../components/shared/SectionHeader";
-// import focusdev from "../assets/imgs/focusdev.png";
-// import devLinks from "../assets/imgs/devlinks.png";
+import focusdev from "../assets/imgs/focusdev.png";
+import devLinks from "../assets/imgs/devlinks.png";
 
 interface ProjectsProps {
   id: string;
@@ -47,6 +47,25 @@ const projectsData: ProjectData[] = [
     repoLink: "https://github.com/RegianaBarbosa/a-mesa-esta-posta",
     demoLink: "https://a-mesa-esta-posta.vercel.app/",
     position: "left",
+  },  {
+    title: "FocusDev",
+    subtitle: "Interface de Login",
+    tags: ["HTML", "CSS", "JavaScript"],
+    image: focusdev,
+    description:
+      "Tela de login responsiva desenvolvida como prática de UI e responsividade.",
+    repoLink: "https://github.com/RegianaBarbosa/focusdev-website",
+    demoLink: "https://focusdev-website.vercel.app/",
+  },
+  {
+    title: "DevLinks",
+    subtitle: "Página de links pessoais",
+    tags: ["HTML", "CSS", "JavaScript"],
+    image: devLinks,
+    description:
+      "Projeto do Discover/Rocketseat com tema dinâmico e responsividade.",
+    repoLink: "https://github.com/RegianaBarbosa/devlinks",
+    demoLink: "https://regianabarbosa.github.io/devlinks/",
   },
 ];
 

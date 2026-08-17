@@ -72,14 +72,14 @@ export const FormContact: React.FC<FormContactProps> = ({ id }) => {
   return (
     <section
       id={id}
-      className="w-full bg-brand-roxo text-neutral-white pt-36 pb-8 px-16 lg:px-32"
+      className="w-full bg-brand-roxo text-neutral-white pt-16 md:pt-24 lg:pt-36 pb-8 px-16 lg:px-32"
     >
       <div className="flex flex-col lg:flex-row justify-center gap-16 md:gap-24 lg:gap-32 pb-8">
         {/* LADO ESQUERDO: TEXTO E REDES SOCIAIS */}
         <div className="w-full max-w-2xl lg:col-span-5 flex flex-col space-y-6">
           {/* Tag Badge com Seta Turquesa */}
           <div className="flex items-center gap-2 text-brand-turquesa text-body-lg">
-            <ArrowRightBulletIcon/>
+            <ArrowRightBulletIcon />
             <span>Entre em contato</span>
           </div>
 
@@ -92,7 +92,8 @@ export const FormContact: React.FC<FormContactProps> = ({ id }) => {
           {/* Subtítulo / Descrição */}
           <p className="text-body-lg text-neutral-white/80 leading-relaxed pt-2">
             Transformo desafios de negócio em experiências digitais centradas no
-            usuário e orientadas a resultado. Do <span className="italic">discovery</span> à implementação.
+            usuário e orientadas a resultado. Do{" "}
+            <span className="italic">discovery</span> à implementação.
           </p>
 
           {/* Ícones de Redes Sociais */}
@@ -231,11 +232,13 @@ export const FormContact: React.FC<FormContactProps> = ({ id }) => {
                 </>
               )}
             </button>
-            <div className="w-full flex justify-center italic text-body-sm"><p>Respondo em até 24 horas</p></div>
+            <div className="w-full flex justify-center italic text-body-sm">
+              <p>Respondo em até 24 horas</p>
+            </div>
           </form>
         </div>
       </div>
-      
+
       {/* COPYRIGHT */}
       <div className="text-center text-neutral-white-opacity-25 text-body-md pt-24">
         Regiana Cruz © 2026 Todos os direitos reservados.
