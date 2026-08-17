@@ -2,7 +2,6 @@ import { ServiceCard } from "../components/shared/ServiceCard";
 import iconUx from "../assets/icons/psychology_violeta.svg";
 import iconUi from "../assets/icons/design_services_violeta.svg";
 import iconCode from "../assets/icons/code_violeta.svg";
-import { ArrowRightBulletIcon } from "../components/shared/ArrowRightBulletIcon";
 import { SectionHeader } from "../components/shared/SectionHeader";
 
 interface ServicesProps {
