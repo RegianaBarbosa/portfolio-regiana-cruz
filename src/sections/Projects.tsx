@@ -18,16 +18,6 @@ interface ProjectsProps {
 // Lista oficial de projetos em destaque
 const projectsData: ProjectData[] = [
   {
-    title: "Bilro Arte",
-    subtitle: "Aplicativo para gestão de e-commerce",
-    tags: ["E-COMMERCE", "UX RESEARCH", "TESTE DE USABILIDADE"],
-    image: bilroArte,
-    description:
-      "Aplicativo mobile projetado para ajudar rendeiras com baixa familiaridade digital a vender e gerenciar seus produtos com autonomia, por meio de uma interface simples, intuitiva e orientada por testes de usabilidade.",
-    caseSlug: "bilro-arte",
-    position: "left",
-  },
-  {
     title: "PersonaTour",
     subtitle: "Aplicativo de turismo acessível",
     tags: ["TURISMO ACESSÍVEL", "UX/UI DESIGN", "ACESSABILIDADE"],
@@ -36,6 +26,16 @@ const projectsData: ProjectData[] = [
       "Aplicativo de recomendação de pontos turísticos personalizado para o público idoso e PwD, focado em acessibilidade, preferências do usuário e facilidade de uso em dispositivos móveis.",
     caseSlug: "persona-tour",
     position: "right",
+  },
+  {
+    title: "Bilro Arte",
+    subtitle: "Aplicativo para gestão de e-commerce",
+    tags: ["E-COMMERCE", "UX RESEARCH", "TESTE DE USABILIDADE"],
+    image: bilroArte,
+    description:
+      "Aplicativo mobile projetado para ajudar rendeiras com baixa familiaridade digital a vender e gerenciar seus produtos com autonomia, por meio de uma interface simples, intuitiva e orientada por testes de usabilidade.",
+    caseSlug: "bilro-arte",
+    position: "left",
   },
   {
     title: "A Mesa Está Posta",
@@ -47,7 +47,8 @@ const projectsData: ProjectData[] = [
     repoLink: "https://github.com/RegianaBarbosa/a-mesa-esta-posta",
     demoLink: "https://a-mesa-esta-posta.vercel.app/",
     position: "left",
-  },  {
+  },
+  {
     title: "FocusDev",
     subtitle: "Interface de Login",
     tags: ["HTML", "CSS", "JavaScript"],
