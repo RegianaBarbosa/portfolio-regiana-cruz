@@ -10,7 +10,7 @@ Bem-vindo(a) ao repositório do meu portfólio profissional!
 Aqui você encontra a estrutura e o código-fonte de um projeto moderno desenvolvido para centralizar meus projetos, experiências e habilidades nas áreas de **Desenvolvimento Front-end** e **UX/UI Design**.
 
 <p>
-  🌐 Acesse o portfólio online: <a href="https://seu-dominio-na-vercel.vercel.app">Portfólio na Vercel</a>
+  🌐 Acesse o portfólio online: <a href="https://portfolio-regiana-cruz-pi.vercel.app/">Portfólio na Vercel</a>
 </p>
 
 ---
