@@ -1,85 +1,61 @@
 # 🚀 Portfólio – Regiana Barbosa Lima Cruz
-![Status do Projeto](https://img.shields.io/badge/status-em%20andamento-yellow)
+![Status do Projeto](https://img.shields.io/badge/status-concluído%20%2F%20v2.0-success)
 ![Tecnologia](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black)
 ![Tecnologia](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
-![Tecnologia](https://img.shields.io/badge/Tailwind_CSS-06B6D4?logo=tailwindcss&logoColor=white)
+![Tecnologia](https://img.shields.io/badge/Tailwind_CSS_v4-06B6D4?logo=tailwindcss&logoColor=white)
 ![Build](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)
+![Deploy](https://img.shields.io/badge/Vercel-000000?logo=vercel&logoColor=white)
 
-
-Bem-vindo(a) ao meu portfólio!  
-Aqui você encontra meus projetos, experiências e habilidades desenvolvidas ao longo da minha trajetória acadêmica e profissional nas áreas de **Desenvolvimento Web**, **Engenharia de Software**, **UX/UI Design** e **Pesquisa em Inovação Tecnológica**.
+Bem-vindo(a) ao repositório do meu portfólio profissional!  
+Aqui você encontra a estrutura e o código-fonte de um projeto moderno desenvolvido para centralizar meus projetos, experiências e habilidades nas áreas de **Desenvolvimento Front-end** e **UX/UI Design**.
 
 <p>
-  Acesse aqui: <a href="https://regianabarbosa.github.io/portfolio-regiana-cruz/">Portfólio</a>
+  🌐 Acesse o portfólio online: <a href="https://seu-dominio-na-vercel.vercel.app">Portfólio na Vercel</a>
 </p>
+
+---
 
 ## 🎯 Sobre mim
 
-Sou graduanda em **Bacharelado em Sistemas de Informação** pelo IFMA e participante do **Programa de Dupla Diplomação IFMA–ISEP (2023)**, onde aprofundei meus conhecimentos em:
+Sou formada em **Sistemas de Informação** pelo **IFMA** (Campus Monte Castelo) e atualmente **mestranda em Engenharia Informática / Engenharia de Software** no **ISEP** (Portugal) através do Programa de Dupla Diplomação.
 
-- Integração de Sistemas  
-- Segurança Informática  
-- Qualidade de Software  
-- Programação Funcional com Scala  
-
-Também conduzi uma **pesquisa extensa para meu TCC**, desenvolvendo habilidades de investigação, análise crítica e inovação.
-
-Ao longo da minha formação, busquei me especializar em:
-
-- Desenvolvimento Web  
-- Engenharia de Software  
-- Interação Humano-Computador  
-- UX Design  
-- Gerenciamento de Projetos  
-- Metodologias Ágeis  
-
-Participei de projetos de pesquisa e inovação (como **BilroArte** e **PersonaTour**) aplicando métodos de UX, prototipação e testes, além de contribuir com gestão de processos e equipes. Essas experiências fortaleceram minha capacidade de resolver problemas com empatia, organização e colaboração.
+Atuo na intersecção entre **pesquisa, design e tecnologia**, conduzindo processos de UX de ponta a ponta (do *discovery* à validação) e traduzindo protótipos em interfaces web de alto desempenho, limpas e acessíveis.
 
 ---
 
-## 💻 Habilidades Técnicas
+## 💻 Habilidades & Ferramentas
 
-### **Desenvolvimento Web**
-- React, TypeScript, JavaScript  
-- HTML5, CSS3, TailwindCSS  
-- Consumo de APIs, Integração de sistemas  
+### **Design & UX**
+- Pesquisa com usuários & Testes de usabilidade
+- Arquitetura da informação, fluxos e jornadas
+- Prototipação interativa de alta fidelidade no Figma
+- Criação e evolução de Design Systems
 
-### **UX/UI Design**
-- Prototipação no Figma  
-- Pesquisa com usuários & testes  
-- Arquitetura da informação  
-- Fluxos, personas e jornadas  
+### **Front-end & Tech**
+- React, TypeScript, JavaScript (ES6+)
+- Tailwind CSS (v4) e Design Tokens
+- HTML5, CSS3, Responsividade avançada
+- Componentização modular (SPA)
 
-### **Engenharia de Software**
-- Análise de requisitos  
-- Modelagem de funcionalidades  
-- Qualidade de Software  
-- Programação Funcional (Scala)  
-
-### **Gestão & Metodologias**
-- Metodologias Ágeis (Scrum, Kanban)  
-- Gestão de demandas no Taiga  
-- Organização de equipes e processos  
+### **Engenharia & Organização**
+- Engenharia de Software & Qualidade
+- Integração de Sistemas e boas práticas de código
+- Metodologias Ágeis (Scrum, Kanban)
+- Git, GitHub e Deploy contínuo (Vercel)
 
 ---
 
-## 📁 Projetos em Destaque
+## 📁 Projetos e Cases em Destaque
 
-### 🔹 **BilroArte**
-Plataforma de e-commerce para comercialização e preservação do artesanato de Renda de Bilro de Raposa-MA, envolvendo UX, prototipação e validação.
+O portfólio conta com páginas dinâmicas dedicadas a estudos de caso aprofundados (UX/UI Cases):
 
-### 🔹 **PersonaTour**
-Aplicação focada em turismo inclusivo para PcD e idosos com uso de métodos de design, pesquisa e testes.
-
-### 🔹 **Langind Pages**
-Interfaces desenvolvidas do zero — do Figma ao código — com React, TypeScript e Tailwind.
+1. **PersonaTour** – Aplicativo de turismo acessível e inclusivo voltado para o público idoso e PCDs, focado em autonomia e navegação simplificada.
+2. **BilroArte** – Plataforma de e-commerce e valorização cultural para artesãs de Renda de Bilro (Raposa-MA), estruturada com base em testes de usabilidade reais.
+3. **Landing Pages & Aplicações Web** – Interfaces responsivas e performáticas construídas do zero utilizando React, Tailwind e TypeScript.
 
 ---
 
-## 🌍 Experiência Internacional – ISEP (Portugal)
+## 🌍 Experiência Acadêmica e Internacional
 
-A Dupla Diplomação ampliou minha visão sobre Engenharia Informática, permitindo colaborar em soluções mais seguras, eficientes e de alto desempenho, além de fortalecer minha atuação em ambientes multiculturais.
-
-
-Obrigada por visitar meu repositório!  
-Fique à vontade para explorar meus projetos e contribuir com feedback 😊
+- **Mestrado em Engenharia Informática – ISEP (Portugal):** Foco em integração de sistemas, segurança, qualidade de software e soluções de alto desempenho em ambiente multicultural.
+- **Graduação em Sistemas de Informação – IFMA (São Luís - MA):** Ênfase em Engenharia de Software, Interação Homem-Computador (IHC) e gestão de projetos de inovação.
