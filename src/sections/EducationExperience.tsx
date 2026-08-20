@@ -14,9 +14,9 @@ export const EducationExperience: React.FC<EducationExperienceProps> = ({
   return (
     <section
       id={id}
-      className="w-full flex items-center py-16 md:py-0 px-6 md:my-20 lg:my-32"
+      className="bg-neutral-offwhite w-full flex items-center py-16 md:py-20 lg:py-32"
     >
-      <div className="w-full flex flex-col gap-20 mx-auto px-6 md:px-16 lg:px-32">
+      <div className="w-full flex flex-col gap-8 lg:gap-20 mx-auto px-6 md:px-16 lg:px-32">
         <SectionHeader
           tag="Educação & Carreira"
           title="Minha jornada acadêmica e profissional"
@@ -89,7 +89,7 @@ export const EducationExperience: React.FC<EducationExperienceProps> = ({
                 {educationData.map((item) => (
                   <div key={item.id} className="flex items-start gap-4">
                     {/* Logo da Instituição */}
-                    <div className="w-10 h-10 rounded-lg overflow-hidden shrink-0 mt-0.5 flex items-center justify-center">
+                    <div className="hidden lg:flex w-10 h-10 rounded-lg overflow-hidden shrink-0 mt-0.5 items-center justify-center">
                       <img
                         src={item.logo}
                         alt={item.institution}
