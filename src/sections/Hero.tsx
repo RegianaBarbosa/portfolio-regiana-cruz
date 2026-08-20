@@ -60,7 +60,7 @@ export const Hero = ({ id }: HeroProps) => {
                   className="w-5 h-5"
                 />
               }
-              href={"/portfolio-regiana-cruz/Currículo_RegianaCruz.pdf"}
+              href={"/Currículo_RegianaCruz.pdf"}
               target="_blank"
               rel="noopener noreferrer"
               textClassName="text-body-lg"
