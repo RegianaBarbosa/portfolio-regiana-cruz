@@ -86,7 +86,7 @@ export const About = ({ id }: AboutProps) => {
                 2
               </h1>
               <p className="text-body-sm font-medium text-neutral-off-white leading-snug">
-                Case completo
+                Case completos
               </p>
             </div>
           </div>
