@@ -30,8 +30,8 @@ export const ProjectProblem: React.FC<{ data: CaseContextProblemData }> = ({
   data,
 }) => {
   return (
-    <section className="w-full pt-28 md:pt-36 pb-12 flex justify-center">
-      <div className="w-full mx-auto px-6 md:px-12 lg:px-32">
+    <section className="w-full pt-28 md:pt-36 flex justify-center">
+      <div className="w-full mx-auto px-6 md:px-12 lg:px-32 pb-24">
         <SectionHeader
           className="mb-12"
           tag="Contexto & Problema"

@@ -7,11 +7,11 @@ export const ProjectTests: React.FC<{ data: CaseUsabilityTestingData }> = ({
   data,
 }) => {
   return (
-    <section className="w-full py-16 md:py-24">
+    <section className="bg-neutral-offwhite w-full py-16 md:py-24">
       <div className="w-full mx-auto px-6 md:px-12 lg:px-32">
         <SectionHeader
           className="mb-12"
-          tag="Testes & Melhorias"
+          tag={data.tagTitle || "Testes & Melhorias"}
           title={data.title}
           description={data.description}
           descriptionClassName="mt-6 tracking-wide"

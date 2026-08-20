@@ -31,10 +31,10 @@ export const ProjectLearning: React.FC<{
           />
 
           {/* Lado Direito: Card Roxo do Aprendizado */}
-          <div className="lg:col-span-5 bg-brand-violeta text-neutral-white p-8 md:p-12 rounded-4xl shadow-custom flex flex-col justify-between text-left">
+          <div className="max-w-3xl lg:col-span-5 bg-brand-violeta text-neutral-white p-8 md:p-12 rounded-4xl shadow-custom flex flex-col justify-between text-left">
             <div>
               <span className="text-md font-semibold tracking-widest uppercase text-brand-turquesa block mb-6">
-                {data.learning.badge}
+                APRENDIZADO
               </span>
               <h3 className="text-h3 md:text-h2 font-bold leading-snug mb-6">
                 {data.learning.quote}

@@ -8,7 +8,7 @@ export const ProjectDiscovery: React.FC<{
   data: CaseResearchFindingsData;
 }> = ({ data }) => {
   return (
-    <section className="w-full py-16 md:py-24">
+    <section className="bg-neutral-offwhite w-full py-16 md:py-24">
       <div className="w-full mx-auto px-6 md:px-12 lg:px-32">
         <SectionHeader
           className="mb-12"
@@ -30,10 +30,12 @@ export const ProjectDiscovery: React.FC<{
         </div>
 
         {/* Artefatos Visuais (Mapas, Wireframes, Fluxos) */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-          {data.artifacts.map((art, i) => (
-            <ArtifactCard key={i} label={art.label} image={art.image} />
-          ))}
+        <div className="w-full flex justify-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            {data.artifacts.map((art, i) => (
+              <ArtifactCard key={i} label={art.label} image={art.image} />
+            ))}
+          </div>
         </div>
       </div>
     </section>

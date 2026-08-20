@@ -14,11 +14,11 @@ export const ProjectDecision: React.FC<{
   } | null>(null);
 
   return (
-    <section className="w-full py-16 md:py-24">
+    <section className="bg-neutral-offwhite w-full py-16 md:py-24">
       <div className="w-full mx-auto px-6 md:px-12 lg:px-32">
         <SectionHeader
           className="mb-12"
-          tag="Decisão Crítica de UX"
+          tag={data.tagTitle || "Decisão Crítica de UX"}
           title={data.title}
         />
 

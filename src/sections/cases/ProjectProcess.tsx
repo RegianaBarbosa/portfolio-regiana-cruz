@@ -31,7 +31,7 @@ export const ProjectProcess: React.FC<{ data: CaseDesignProcessData }> = ({
   data,
 }) => {
   return (
-    <section className="w-full py-16 md:py-24">
+    <section className="bg-neutral-offwhite w-full py-16 md:py-24">
       <div className="mx-auto px-6 md:px-12 lg:px-32">
         <SectionHeader
           className="mb-12"
