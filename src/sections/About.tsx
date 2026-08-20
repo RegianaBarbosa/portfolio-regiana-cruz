@@ -83,7 +83,7 @@ export const About = ({ id }: AboutProps) => {
             {/* Card 3 */}
             <div className="experience-metric-card">
               <h1 className="text-h2 md:text-h1 text-neutral-white leading-none mb-2">
-                1
+                2
               </h1>
               <p className="text-body-sm font-medium text-neutral-off-white leading-snug">
                 Case completo
