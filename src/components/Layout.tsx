@@ -22,7 +22,7 @@ export const Layout: React.FC<LayoutProps> = ({
   }, [title]);
 
   return (
-    <div className="min-h-screen flex flex-col justify-between bg-neutral-offwhite text-neutral-black">
+    <div className="min-h-screen flex flex-col justify-between text-neutral-black">
       <Navbar />
       <main className="flex-1 flex flex-col w-full overflow-hidden">
         {children}

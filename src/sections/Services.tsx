@@ -45,7 +45,7 @@ export const Services = ({ id }: ServicesProps) => {
   return (
     <section
       id={id}
-      className="w-full py-16 md:py-24 flex flex-col items-center justify-center scroll-mt-16"
+      className="bg-neutral-offwhite w-full py-16 md:py-24 flex flex-col items-center justify-center scroll-mt-16"
     >
       <div className="w-full mx-auto px-6 md:px-16 lg:px-32">
         <SectionHeader
