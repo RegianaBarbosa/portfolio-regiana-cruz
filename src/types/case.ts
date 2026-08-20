@@ -88,7 +88,6 @@ export interface CaseImpactResultsData {
   description: string;
   bulletPoints: string[];
   learning: {
-    badge: string;
     quote: string;
     description: string;
   };

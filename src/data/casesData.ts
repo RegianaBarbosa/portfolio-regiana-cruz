@@ -2,19 +2,30 @@ import type { CaseStudy } from "../types/case";
 import { getCaseScreens } from "../utils/loadScreens";
 
 // Imagens do Bilro Arte
-import heroImg from "../assets/imgs/case-bilroarte/ProjectPage-hero.png";
+import heroImgBilroArte from "../assets/imgs/case-bilroarte/ProjectPage-hero.png";
 import corredorRendeiras from "../assets/imgs/case-bilroarte/corredor.png";
 import artesas from "../assets/imgs/case-bilroarte/participantes-do-focus-group.png";
 import almofadaRendaBilro from "../assets/imgs/case-bilroarte/almofada.jpg";
-import mapaEmpatia from "../assets/imgs/case-bilroarte/mapaEmpatia-BilroArte.png";
-import mapaContexto from "../assets/imgs/case-bilroarte/mapaContexto-BilroArte.png";
-import mapaWireframes from "../assets/imgs/case-bilroarte/mapaWireframes-bilroarte.png";
-import fluxoUsuario from "../assets/imgs/case-bilroarte/fluxoUsuario-bilroarte.png";
+import mapaEmpatiaBilroArte from "../assets/imgs/case-bilroarte/mapaEmpatia-BilroArte.png";
+import mapaContextoBilroArte from "../assets/imgs/case-bilroarte/mapaContexto-BilroArte.png";
+import wireframesBilroArte from "../assets/imgs/case-bilroarte/mapaWireframes-bilroarte.png";
+import fluxoUsuarioBilroArte from "../assets/imgs/case-bilroarte/fluxoUsuario-bilroarte.png";
 import dashboardHipotese from "../assets/imgs/case-bilroarte/dashboardVendasInicial.png";
 import dashboardTeste from "../assets/imgs/case-bilroarte/teste.png";
 import dashboardTradeoff from "../assets/imgs/case-bilroarte/dashboardVendasFinal.png";
 
-
+// Imagens do Persona Tour
+import heroImgPersonaTour from "../assets/imgs/case-personatour/personaTourCover.png";
+import idososTurismo from "../assets/imgs/case-personatour/idososTurismo.jpg";
+import planejamentoViagem from "../assets/imgs/case-personatour/planejamentoViagem.png";
+import passeioAcessivel from "../assets/imgs/case-personatour/passeioAcessivel.png";
+import mapaEmpatiaPersonaTour from "../assets/imgs/case-personatour/mapaEmpatia-personatour.png";
+import userStoryPersonaTour from "../assets/imgs/case-personatour/usestory-personatour.png";
+import wireframesPersonaTour from "../assets/imgs/case-personatour/wireframes-personatour.png";
+import personaImgPersonaTour from "../assets/imgs/case-personatour/persona-lucia-personatour.png";
+import bigFiveSkills from "../assets/imgs/case-personatour/big-five-skills.png";
+import luciaValidacao from "../assets/imgs/case-personatour/lucia.png";
+import telaQuestionario from "../assets/imgs/case-personatour/prototype_screens/8.png";
 
 export const casesData: Record<string, CaseStudy> = {
   "bilro-arte": {
@@ -27,14 +38,14 @@ export const casesData: Record<string, CaseStudy> = {
         "UX RESEARCH",
         "TESTE DE USABILIDADE",
       ],
-      title: "Bilro Arte",
+      title: "Bilro Arte: Plataforma inclusiva para comercialização da Renda de Bilro",
       description:
         "Aplicativo de venda online para artesãs com baixa familiaridade digital, priorizando autonomia e simplicidade.",
       role: "UX Designer",
       context: "Projeto Acadêmico - IFMA/ISEP",
       market: "E-commerce Criativo",
       duration: "7 meses (2023 - 2024)",
-      heroImage: heroImg,
+      heroImage: heroImgBilroArte,
     },
     contextProblem: {
       title: "Renda de Bilro",
@@ -114,10 +125,10 @@ export const casesData: Record<string, CaseStudy> = {
         },
       ],
       artifacts: [
-        { label: "MAPA DE EMPATIA", image: mapaEmpatia },
-        { label: "MAPA DO CONTEXTO", image: mapaContexto },
-        { label: "WIREFRAMES", image: mapaWireframes },
-        { label: "FLUXO DO USUÁRIO", image: fluxoUsuario },
+        { label: "MAPA DE EMPATIA", image: mapaEmpatiaBilroArte },
+        { label: "MAPA DO CONTEXTO", image: mapaContextoBilroArte },
+        { label: "WIREFRAMES", image: wireframesBilroArte },
+        { label: "FLUXO DO USUÁRIO", image: fluxoUsuarioBilroArte },
       ],
     },
     usabilityTesting: {
@@ -191,11 +202,221 @@ export const casesData: Record<string, CaseStudy> = {
         "Inclusão e acessibilidade",
       ],
       learning: {
-        badge: "APRENDIZADO",
         quote:
           "UX não é adicionar recursos, mas saber identificar quais realmente devem existir.",
         description:
           "Testes com usuárias reais demonstraram que uma funcionalidade padrão de um mercado pode gerar ruído e resistência em públicos com baixa literacia digital.",
+      },
+    },
+  },
+
+  "persona-tour": {
+    slug: "persona-tour",
+    metaTitle: "PersonaTour | UX/UI Case - Regiana Cruz",
+    hero: {
+      tags: [
+        "TURISMO ACESSÍVEL",
+        "SISTEMA DE RECOMENDAÇÃO",
+        "ACESSIBILIDADE",
+        "UX RESEARCH",
+      ],
+      title: "PersonaTour",
+      description:
+        "Aplicativo de recomendação turística que personaliza sugestões de pontos turísticos com base na personalidade, preferências e necessidades de acessibilidade do usuário.",
+      role: "UX/UI Designer & Scrum Master",
+      context: "Projeto Acadêmico - IFMA e ISEP",
+      market: "Turismo Acessível",
+      duration: "6 meses (Nov 2024 - Abr 2025)",
+      heroImage: heroImgPersonaTour,
+    },
+
+    contextProblem: {
+      title: "Turismo para a Melhor Idade",
+      paragraphs: [
+        `O envelhecimento da população tem ampliado a participação de pessoas idosas no setor turístico. Apesar desse crescimento, a maioria dos aplicativos de viagem continua sendo projetada para usuários mais jovens, exigindo alto nível de familiaridade digital e desconsiderando limitações físicas, cognitivas e preferências específicas desse público.`,
+
+        `Durante a pesquisa, identificamos que muitos idosos sentiam dificuldade para encontrar roteiros compatíveis com suas necessidades. Informações sobre acessibilidade, distância percorrida, intensidade das atividades e infraestrutura disponível eram dispersas ou difíceis de interpretar.`,
+
+        `O **PersonaTour** nasceu para tornar o planejamento turístico mais simples e personalizado, recomendando pontos de interesse adequados ao perfil, às preferências e às condições de cada viajante idoso.`,
+      ],
+
+      sideImages: [idososTurismo, planejamentoViagem, passeioAcessivel],
+
+      problemDefinition: {
+        badge: "DEFINIÇÃO DO PROBLEMA",
+        question:
+          "Como ajudar pessoas idosas a encontrar experiências turísticas compatíveis com suas necessidades, interesses e limitações, sem tornar o processo de planejamento complexo ou cansativo?",
+      },
+
+      bulletPoints: [
+        "Dificuldade para identificar locais adequados ao perfil do viajante.",
+        "Falta de informações claras sobre acessibilidade e esforço físico necessário.",
+        "Excesso de opções e sobrecarga de decisão durante o planejamento.",
+      ],
+    },
+
+    designProcess: {
+      description:
+        "Aplicamos o Design Thinking para compreender profundamente as necessidades do público idoso e transformar essas descobertas em uma experiência de recomendação simples, confiável e personalizada.",
+
+      phases: [
+        {
+          items: [
+            "Desk Research",
+            "Entrevistas com usuários",
+            "Benchmarking",
+            "Mapa de Empatia",
+          ],
+        },
+        {
+          items: [
+            "Personas",
+            "Histórias do Usuário",
+            "Definição de Requisitos",
+          ],
+        },
+        {
+          items: ["Sitemap", "Arquitetura da Informação", "Sketches"],
+        },
+        {
+          items: [
+            "Wireframes",
+            "Protótipo de Alta Fidelidade",
+            "Testes de Usabilidade",
+          ],
+        },
+      ],
+
+      objective:
+        "Criar uma experiência de descoberta turística personalizada para pessoas idosas, reduzindo a complexidade da tomada de decisão e aumentando a confiança durante o planejamento de viagens.",
+    },
+
+    researchFindings: {
+      title: "3 descobertas que moldaram a experiência",
+
+      findings: [
+        {
+          number: "01",
+          title: "PREFERÊNCIAS MUITO PARTICULARES",
+          finding:
+            "Cada usuário possuía interesses, limitações físicas e expectativas diferentes sobre uma viagem.",
+          solution:
+            "Desenvolvemos um sistema de recomendação baseado em perfil e preferências individuais.",
+        },
+
+        {
+          number: "02",
+          title: "PREOCUPAÇÃO COM ACESSIBILIDADE",
+          finding:
+            "Informações sobre acessibilidade eram decisivas para a escolha de destinos e atrações.",
+          solution:
+            "Destacamos indicadores de acessibilidade e nível de esforço físico logo nas recomendações.",
+        },
+
+        {
+          number: "03",
+          title: "SOBRECARGA DE ESCOLHA",
+          finding:
+            "Muitas opções disponíveis geravam insegurança e dificultavam a tomada de decisão.",
+          solution:
+            "Priorizamos recomendações personalizadas em vez de apresentar longas listas genéricas.",
+        },
+      ],
+
+      artifacts: [
+        { label: "MAPA DE EMPATIA", image: mapaEmpatiaPersonaTour },
+        { label: "PERSONA", image: personaImgPersonaTour },
+        { label: "HISTÓRIA DO USUÁRIO", image: userStoryPersonaTour },
+        { label: "WIREFRAMES", image: wireframesPersonaTour },
+      ],
+    },
+
+    usabilityTesting: {
+      tagTitle: "Testes de Usabilidade",
+      title: "Evidências observadas e oportunidades de melhoria",
+      description:
+        "Participei da aplicação de 24 sessões de testes moderados. Abaixo estão os principais pontos de atrito identificados e as oportunidades mapeadas para o produto.",
+
+      cards: [
+        {
+          title: "AVALIAÇÃO DE ACESSIBILIDADE",
+          badge: "INTERFACE",
+          problem:
+            "Usuários tentavam clicar nas legendas achando que eram botões e ficaram confusos com a quantidade de ícones.",
+          decision:
+            "Separar claramente textos informativos de botões de ação e simplificar o formato da avaliação.",
+        },
+        {
+          title: "TECLADO E FORMULÁRIOS",
+          badge: "INTERAÇÃO",
+          problem:
+            "O teclado virtual cobria botões como 'Entrar' e 'Salvar', fazendo pessoas acharem que a tela travou.",
+          decision:
+            "Manter os botões de ação fixos ou rolar a tela automaticamente para que fiquem sempre visíveis.",
+        },
+        {
+          title: "GESTÃO DE LISTAS",
+          badge: "CLAREZA",
+          problem:
+            "Houve dúvida entre 'Salvar' e 'Favoritar', além de confusão sobre onde digitar os códigos de listas compartilhadas.",
+          decision:
+            "Padronizar os termos da interface e tornar os campos de código mais óbvios e intuitivos.",
+        },
+      ],
+    },
+
+    criticalDecision: {
+      title: "Equilibrando personalização e esforço",
+      columns: [
+        {
+          badge: "DESAFIO",
+          title: "44 perguntas exaustivas",
+          text: "O algoritmo de recomendação dependia de 44 perguntas do modelo Big Five para personalizar as recomendações, tornando o cadastro longo e com alto risco de abandono.",
+          image: bigFiveSkills,
+        },
+
+        {
+          badge: "SOLUÇÃO",
+          title: "Experiência mais leve",
+          text: "Redesenhamos o onboarding com 15 perguntas divididas em três etapas e criamos a personagem Lúcia para conduzir a experiência.",
+          image: luciaValidacao,
+        },
+
+        {
+          badge: "VALIDAÇÃO",
+          title: "Menos fricção",
+          text: "Os testes mostraram que a divisão em etapas curtas tornou o cadastro mais simples, compreensível e confortável para os usuários.",
+          image: telaQuestionario,
+        },
+      ],
+
+      tradeOff:
+        "Adaptamos a forma de coletar os dados necessários para gerar recomendações relevantes sem comprometer a experiência logo no primeiro contato com o produto.",
+    },
+
+    prototypeScreens: {
+      title: "Protótipo da solução",
+      screens: getCaseScreens("case-personatour"),
+    },
+
+    impactResults: {
+      tagTitle: "Impacto & Aprendizado",
+      title: "Turismo centrado em todas as pessoas",
+      description:
+        "O Persona Tour demonstrou como design inclusivo e sistemas de recomendação podem tornar o planejamento turístico mais acessível para pessoas idosas e com deficiência.",
+
+      bulletPoints: [
+        "Informações colaborativas sobre acessibilidade e mobilidade dos locais",
+        "Redução de 44 para 15 perguntas no cadastro inicial",
+        "Recomendações alinhadas ao perfil e às necessidades do usuário",
+        "Interface simplificada para baixa familiaridade digital",
+      ],
+
+      learning: {
+        quote:
+          "Design inclusivo é criar soluções simples o suficiente para que qualquer pessoa tenha autonomia.",
+        description:
+          "Mais do que calibrar um sistema de recomendação, o grande aprendizado foi entender os receios e limitações do público. Equilibrar a coleta de dados com a clareza das informações de acessibilidade foi o que tornou o produto verdadeiramente viável e humano.",
       },
     },
   },

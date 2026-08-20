@@ -34,12 +34,12 @@ export const ArtifactCard: React.FC<ArtifactCardProps> = ({
           handleToggle();
         }
       }}
-      className="relative w-full max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-custom group cursor-pointer select-none transition-all duration-500 hover:shadow-2xl focus:outline-none"
+      className="relative w-full justify-items-center rounded-3xl overflow-hidden shadow-custom group cursor-pointer select-none transition-all duration-500 hover:shadow-2xl focus:outline-none"
     >
       <img
         src={image}
         alt={alt || label}
-        className={`w-full h-100 object-cover object-center transition-transform duration-700 ease-out ${
+        className={`w-auto h-100 object-cover object-center transition-transform duration-700 ease-out ${
           isActive ? "scale-100" : "scale-[1.01] group-hover:scale-105"
         }`}
       />

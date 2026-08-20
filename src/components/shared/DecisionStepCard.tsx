@@ -42,7 +42,7 @@ export const DecisionStepCard: React.FC<DecisionStepCardProps> = ({
       {/* MOLDURA DA MÍDIA HARMONIZADA */}
       <div
         onClick={onImageClick}
-        className={`relative w-full h-64 sm:h-72 rounded-2xl overflow-hidden bg-neutral-offwhite/50 border border-neutral-border/60 group-hover:border-brand-lilas/30 flex items-center justify-center p-3 transition-all duration-300 ${
+        className={`relative w-full h-72 sm:h-96 rounded-2xl overflow-hidden bg-neutral-offwhite/50 border border-neutral-border/60 group-hover:border-brand-lilas/30 flex items-center justify-center p-3 transition-all duration-300 ${
           onImageClick ? "cursor-zoom-in group/img" : ""
         }`}
         title={onImageClick ? "Clique para ampliar a imagem" : undefined}
